@@ -299,6 +299,34 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* conoce el team */}
+      <div className="h-auto mt-20 flex flex-col items-center justify-center">
+        <div className="flex w-[80%] flex-col items-center justify-center rounded-xl border-[1px] border-black">
+          <div className="flex flex-col px-6">
+            <div className="flex flex-row items-center justify-center w-full mt-2 space-x-2">
+              <div className="">
+                <p className="text-[26px] text-left">
+                  Unique
+                </p>
+              </div>
+              <div className="">
+                <Image src={images.lugares} objectFit="contain" />
+              </div>
+            </div>
+            <div className="flex items-center flex-col justify-center">
+              <p className="text-[100px] leading-[6rem]">places</p>
+              <div className="mt-4 px-1 ">
+                <Image src={images.meditar} />
+              </div>
+              <p className="text-[55px]">to meditate</p>
+              <div className="mt-1 px-1">
+                <Image src={images.consciente} />
+              </div>
+              <p className="text-[55px]">consciously</p>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Footer */}
       <div className="h-[60vh] mt-20 bg-black flex flex-col items-center justify-between">
         <div className="mt-20">

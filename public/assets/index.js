@@ -14,6 +14,9 @@ import utilitymenu from './utilitymenu.png';
 import fondod from './fondod.png';
 import rojkind from './rojkind.png';
 import logofooter from './logofooter.png';
+import lugares from './lugares.png';
+import meditar from './meditar.png';
+import consciente from './consciente.png';
 
 export default {
   menu,
@@ -32,5 +35,8 @@ export default {
   fondod,
   rojkind,
   logofooter,
+  lugares,
+  meditar,
+  consciente,
 
 };
