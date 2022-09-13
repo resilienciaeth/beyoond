@@ -5,11 +5,14 @@ import React, { useEffect } from 'react';
 import images from '../public/assets';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
+import faq from '../components/Faq';
+import Faq from '../components/Faq';
 
 function Home() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
+
   return (
     <div className="font-sfpro text-black bg-beyond-1">
       {/* Header */}
@@ -105,155 +108,103 @@ function Home() {
         </div>
       </div>
       {/* Utilidades */}
-      <div className=" mt-10 flex flex-col items-center justify-center sm:justify-start ">
-        <div className="flex">
-          <h1 className="text-[25px] font-bold">What are the utilities?</h1>
+
+      {/* Utilidades */}
+      <div className=" mt-10 flex flex-col items-center justify-center sm:justify-start w-full">
+        <Faq />
+      </div>
+      {/* Metaverse Compatibility */}
+      <div className="mt-10">
+        <div className="px-8">
+          <Image src={images.render3} className="rounded-3xl" />
         </div>
-        <div className="mt-10  w-full">
-          <div className="border-t-[1px] border-b-[1px] border-t-black border-black w-full">
-            <div className="flex flex-row py-4 space-x-4">
-              <div className="flex justify-start ml-4 w-[85%]">
-                <p className="text-[16px]">01. A Private Space in the Metaverse.</p>
+        <div className="flex w-full flex-col justify-center ">
+          <div className="flex flex-col mt-10">
+            <h1 className="text-center">Metaverse Compatibility</h1>
+            <div className="flex flex-row items-center justify-center space-x-10 mt-5 ">
+              <div className="flex flex-col">
+                <p className="text-[10px] underline text-center ">Unity</p>
+                <p className="text-[10px] underline text-center ">Decentraland</p>
               </div>
-              <div className="flex w-[15%] justify-center mr-2 items-center">
-                <Image src={images.utilitymenu} />
+              <div className="flex flex-col">
+                <p className="text-[10px] underline text-center ">VR Chat</p>
+                <p className="text-[10px] underline text-center ">Unreal Engine 5</p>
               </div>
-            </div>
-          </div>
-          <div className="border-b-[1px] border-t-black border-black w-full">
-            <div className="flex flex-row py-4 space-x-4">
-              <div className="flex justify-start ml-4 w-[85%]">
-                <p className="text-[16px]">02. Private Virtual Events.</p>
-              </div>
-              <div className="flex w-[15%] justify-center mr-2 items-center">
-                <Image src={images.utilitymenu} />
+              <div className="flex flex-col">
+                <p className="text-[10px] underline text-center ">Spatial.io</p>
+                <p className="text-[10px] underline text-center ">Nvidia Omniverse</p>
               </div>
             </div>
           </div>
-          <div className="border-b-[1px] border-t-black border-black w-full">
-            <div className="flex flex-row py-4 space-x-4">
-              <div className="flex justify-start ml-4 w-[85%]">
-                <p className="text-[16px]">03. Priority Access to Future Projects.</p>
-              </div>
-              <div className="flex w-[15%] justify-center mr-2 items-center">
-                <Image src={images.utilitymenu} />
-              </div>
-            </div>
-          </div>
-          <div className="border-b-[1px] border-t-black border-black w-full">
-            <div className="flex flex-row py-4 space-x-4">
-              <div className="flex justify-start ml-4 w-[85%]">
-                <p className="text-[16px]">04. Access to a Gated Community.</p>
-              </div>
-              <div className="flex w-[15%] justify-center mr-2 items-center">
-                <Image src={images.utilitymenu} />
-              </div>
-            </div>
-          </div>
-          <div className="border-b-[1px] border-t-black border-black w-full">
-            <div className="flex flex-row py-4 space-x-4">
-              <div className="flex justify-start ml-4 w-[85%]">
-                <p className="text-[16px]">05. Build the Future with us.</p>
-              </div>
-              <div className="flex w-[15%] justify-center mr-2 items-center">
-                <Image src={images.utilitymenu} />
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Metaverse Compatibility */}
-        <div className="mt-10">
-          <div className="px-8">
-            <Image src={images.render3} className="rounded-3xl" />
-          </div>
-          <div className="flex w-full flex-col justify-center ">
-            <div className="flex flex-col mt-10">
-              <h1 className="text-center">Metaverse Compatibility</h1>
-              <div className="flex flex-row items-center justify-center space-x-10 mt-5 ">
-                <div className="flex flex-col">
-                  <p className="text-[10px] underline text-center ">Unity</p>
-                  <p className="text-[10px] underline text-center ">Decentraland</p>
+          <div>
+            <div className="flex-row flex mt-10 px-10">
+              <div className="flex flex-col items-start w-[50%]">
+                <div className="flex items-start">
+                  <h1 className="text-[14px] font-bold text-left">FBX</h1>
                 </div>
-                <div className="flex flex-col">
-                  <p className="text-[10px] underline text-center ">VR Chat</p>
-                  <p className="text-[10px] underline text-center ">Unreal Engine 5</p>
+                <div className="space-y-2 w-[80%] mt-2">
+                  <div className="bg-[#D9D9D9] py-1">
+                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
+                      Highest Fidelity | 378MB
+                    </h1>
+                  </div>
+                  <div className="bg-[#D9D9D9] py-1">
+                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
+                      Highest Fidelity | 378MB
+                    </h1>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <p className="text-[10px] underline text-center ">Spatial.io</p>
-                  <p className="text-[10px] underline text-center ">Nvidia Omniverse</p>
+              </div>
+              <div className="flex flex-col items-start w-[50%] ml-5">
+                <div className="flex items-start">
+                  <h1 className="text-[14px] font-bold text-left">FBX</h1>
+                </div>
+                <div className="space-y-2 w-[80%] mt-2">
+                  <div className="bg-[#D9D9D9] py-1">
+                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
+                      Highest Fidelity | 378MB
+                    </h1>
+                  </div>
+                  <div className="bg-[#D9D9D9] py-1">
+                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
+                      Highest Fidelity | 378MB
+                    </h1>
+                  </div>
                 </div>
               </div>
             </div>
-            <div>
-              <div className="flex-row flex mt-10 px-10">
-                <div className="flex flex-col items-start w-[50%]">
-                  <div className="flex items-start">
-                    <h1 className="text-[14px] font-bold text-left">FBX</h1>
-                  </div>
-                  <div className="space-y-2 w-[80%] mt-2">
-                    <div className="bg-[#D9D9D9] py-1">
-                      <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                        Highest Fidelity | 378MB
-                      </h1>
-                    </div>
-                    <div className="bg-[#D9D9D9] py-1">
-                      <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                        Highest Fidelity | 378MB
-                      </h1>
-                    </div>
-                  </div>
+            <div className="flex-row flex mt-10 px-10">
+              <div className="flex flex-col items-start w-[50%]">
+                <div className="flex items-start">
+                  <h1 className="text-[14px] font-bold text-left">USD</h1>
                 </div>
-                <div className="flex flex-col items-start w-[50%] ml-5">
-                  <div className="flex items-start">
-                    <h1 className="text-[14px] font-bold text-left">FBX</h1>
+                <div className="space-y-2 w-[80%] mt-2">
+                  <div className="bg-[#D9D9D9] py-1">
+                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
+                      Highest Fidelity | 378MB
+                    </h1>
                   </div>
-                  <div className="space-y-2 w-[80%] mt-2">
-                    <div className="bg-[#D9D9D9] py-1">
-                      <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                        Highest Fidelity | 378MB
-                      </h1>
-                    </div>
-                    <div className="bg-[#D9D9D9] py-1">
-                      <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                        Highest Fidelity | 378MB
-                      </h1>
-                    </div>
+                  <div className="bg-[#D9D9D9] py-1">
+                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
+                      Highest Fidelity | 378MB
+                    </h1>
                   </div>
                 </div>
               </div>
-              <div className="flex-row flex mt-10 px-10">
-                <div className="flex flex-col items-start w-[50%]">
-                  <div className="flex items-start">
-                    <h1 className="text-[14px] font-bold text-left">USD</h1>
-                  </div>
-                  <div className="space-y-2 w-[80%] mt-2">
-                    <div className="bg-[#D9D9D9] py-1">
-                      <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                        Highest Fidelity | 378MB
-                      </h1>
-                    </div>
-                    <div className="bg-[#D9D9D9] py-1">
-                      <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                        Highest Fidelity | 378MB
-                      </h1>
-                    </div>
-                  </div>
+              <div className="flex flex-col items-start w-[50%] ml-5">
+                <div className="flex items-start">
+                  <h1 className="text-[14px] font-bold text-left">VOX</h1>
                 </div>
-                <div className="flex flex-col items-start w-[50%] ml-5">
-                  <div className="flex items-start">
-                    <h1 className="text-[14px] font-bold text-left">VOX</h1>
+                <div className="space-y-2 w-[80%] mt-2">
+                  <div className="bg-[#D9D9D9] py-1">
+                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
+                      Highest Fidelity | 378MB
+                    </h1>
                   </div>
-                  <div className="space-y-2 w-[80%] mt-2">
-                    <div className="bg-[#D9D9D9] py-1">
-                      <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                        Highest Fidelity | 378MB
-                      </h1>
-                    </div>
-                    <div className="bg-[#D9D9D9] py-1">
-                      <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                        Highest Fidelity | 378MB
-                      </h1>
-                    </div>
+                  <div className="bg-[#D9D9D9] py-1">
+                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
+                      Highest Fidelity | 378MB
+                    </h1>
                   </div>
                 </div>
               </div>
@@ -261,16 +212,9 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* Diseña tu mente */}
-      <div className="h-screen flex flex-col bg-greend items-center justify-center bg-contain bg-no-repeat bg-center">
-        <div className="flex flex-col items-center justify-center">
-          <p className="text-center text-[7px] uppercase">View on Spatial</p>
-          <h1 className="text-[35px]">DESIGN YOUR MIND</h1>
-          <button className="bg-[#E6E6E6] text-[8px] px-5 py-1">Explore</button>
-        </div>
-      </div>
+
       {/* conoce el team */}
-      <div className="h-auto">
+      <div className="h-auto mt-20">
         <div className="px-8">
           <p className="text-[8px]">About The Creators</p>
           <h1 className="text-[36px]">BEYOOND TEAM</h1>

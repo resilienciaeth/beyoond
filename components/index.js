@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
+import faq from './Faq';
 
 
 
-export ( Navbar );
+export [ Navbar, faq ] ;

@@ -279,3 +279,47 @@ client:hover .client-description{
         opacity: 1;
     }
 }
+
+  
+/* accordion */
+.accordion {
+    
+}
+
+.item {
+    background: white;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+}
+
+.title {
+    color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.content {
+    color: #434343;
+    text-align: center;
+    margin-top: 20px;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 12px;
+    margin-top: 4px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0,1,0,1);
+}
+
+.content.show {
+    height: auto;
+    margin-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    max-height: 9999px;
+    transition: all 0.5s cubic-bezier(1,0,1,0);
+}
+
