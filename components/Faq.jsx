@@ -17,7 +17,7 @@ function Faq() {
       </div>
       <div className="w-full mt-10 border-t-[1px] border-black ">
         {data.map((item, i) => (
-          <div className="border-b-[1px] border-t-black border-black w-full py-4 space-x-4">
+          <div className="border-b-[1px] border-t-black border-black w-full py-3 mt-2 space-x-4">
             <div className="flex justify-between ml-4 w-[85%]" onClick={() => toggle(i)}>
               <h2>{item.question}</h2>
               <span className="">{selected === i ? <img src="/assets/utilitymenu2.png" width={20} height={20} alt="arrow" /> : <img src="/assets/utilitymenu.png" width={20} height={20} />}</span>
