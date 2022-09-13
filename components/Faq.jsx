@@ -31,11 +31,11 @@ function Faq() {
 }
 const data = [
   {
-    question: '01. A Private Space in the Metaverse',
+    question: '01. A Private Space in the Metaverse.',
     answer: 'Cada NFT es un espacio diseñado por Michel Rojkind para experimentar en el metaverso. Aquí te encontrarás inmerso en una sala virtual en la que podrás reunirte con quien quieras. De hecho, en una de estas salas es donde Rojkind se reunirá con la comunidad.',
   },
   {
-    question: '02. Private Virtual Events',
+    question: '02. Private Virtual Events.',
     answer: 'Acceso a eventos virtuales en vivo dentro del Metaverso con Michel Rojkind y toda la comunidad. Allí se hablará de temas como meditación, crecimiento personal, espacios virtuales, metaversos y arquitectura.',
   },
   {
