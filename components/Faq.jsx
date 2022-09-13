@@ -32,23 +32,23 @@ function Faq() {
 const data = [
   {
     question: '01. A Private Space in the Metaverse',
-    answer: 'Acceso a eventos virtuales en vivo dentro del Metaverso con Michel Rojkind y toda la comunidad. Allí se hablará de temas como meditación, crecimiento personal, espacios virtuales, metaversos y arquitectura.',
+    answer: 'Cada NFT es un espacio diseñado por Michel Rojkind para experimentar en el metaverso. Aquí te encontrarás inmerso en una sala virtual en la que podrás reunirte con quien quieras. De hecho, en una de estas salas es donde Rojkind se reunirá con la comunidad.',
   },
   {
     question: '02. Private Virtual Events',
-    answer: 'respuesta aqui',
+    answer: 'Acceso a eventos virtuales en vivo dentro del Metaverso con Michel Rojkind y toda la comunidad. Allí se hablará de temas como meditación, crecimiento personal, espacios virtuales, metaversos y arquitectura.',
   },
   {
     question: '03. Priority Access to Future Projects.',
-    answer: 'respuesta aqui',
+    answer: 'Obtienes acceso anticipado para los futuros lanzamientos de proyectos.',
   },
   {
     question: '04. Access to a Gated Community.',
-    answer: 'respuesta aqui',
+    answer: 'Accederás a un grupo privado en discord junto a Michel Rojkind y a todos los compradores del NFT.',
   },
   {
     question: '05. Build the Future with us.',
-    answer: 'respuesta aqui',
+    answer: 'Tendrás la posibilidad de presentar propuestas a Michel para aplicar en sus próximas colecciones y desarrollos en el metaverso.',
   },
 ];
 export default Faq;
