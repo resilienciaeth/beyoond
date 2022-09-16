@@ -61,7 +61,7 @@ function Home() {
               </div>
               <div className="flex flex-col px-2">
                 <p className="text-[11px] text-gray-600 ">Creator</p>
-                <p className="text-[12px]">Michael Rojkind</p>
+                <p className="text-[12px]">Michel Rojkind</p>
               </div>
             </div>
             <div className="flex flex-row">
