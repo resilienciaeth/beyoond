@@ -11,9 +11,9 @@ function Faq() {
   };
 
   return (
-    <div className="mt-10 flex flex-col items-center justify-center sm:justify-start w-full">
-      <div className="flex">
-        <h1 className="text-[25px] font-bold">What are the utilities?</h1>
+    <div className="mt-10 nm:mt-[6rem] flex flex-col items-center justify-center sm:justify-start w-full">
+      <div className="flex ">
+        <h1 className="text-[25px] nm:text-[40px] font-bold">What are the utilities?</h1>
       </div>
       <div className="w-full mt-10 border-t-[1px] border-black ">
         {data.map((item, i) => (

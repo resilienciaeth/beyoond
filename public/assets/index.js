@@ -17,6 +17,11 @@ import logofooter from './logofooter.png';
 import lugares from './lugares.png';
 import meditar from './meditar.png';
 import consciente from './consciente.png';
+import renderdesktop1 from './renderdesktop1.png';
+import rojkinddesktop from './rojkinddesktop.png';
+import unique from './lugaresdesktop.png';
+import meditate from './meditardesktop.png';
+import consciosuly from './conscientedesktop.png';
 
 export default {
   menu,
@@ -38,5 +43,10 @@ export default {
   lugares,
   meditar,
   consciente,
+  renderdesktop1,
+  rojkinddesktop,
+  unique,
+  meditate,
+  consciosuly,
 
 };

@@ -15,10 +15,10 @@ function Home() {
 
   return (
     <div className="font-sfpro text-black bg-beyond-1">
-      {/* Header */}
+      {/* Hero */}
       <div className="relative bg-render nm:bg-renderdesktop bg-cover bg-no-repeat h-screen">
         <div className="flex h-full flex-col ml-5 nm:ml-16 justify-center items-start">
-          <h1 className="text-white mt-[25rem] text-[4vh] nm:text-[5vh]  nm:mt-0 mr-10 font-sfpro font-bold leading-[5vh] nm:leading-[95px] nm:w-[50vh]">
+          <h1 className="text-white mt-[25rem] text-[4vh] nm:text-[5vh]  nm:mt-0 mr-10 font-sfpro font-bold leading-[5vh] nm:leading-[70px] nm:w-[50vh]">
             Tu espacio virtual diseñado por Rojkind.
           </h1>
           <p className="text-[1.5vh] underline cursor-pointer font-sfpro text-white">
@@ -76,7 +76,7 @@ function Home() {
           </div>
           <div className=" border-2 border-[#CBCBCB] mt-4 nm:mt-10 w-[80%] nm:w-[40%] rounded-3xl flex flex-col items-center">
             <p className="text-[10px] nm:text-[15px] mt-4 nm:mt-10">Precio de lanzamiento</p>
-            <p className="text-[35px] nm:text-[60px] font-bold">$300 USD</p>
+            <p className="text-[35px] nm:text-[50px] font-bold">$300 USD</p>
             <div className="flex flex-col mt-4 mb-6 nm:mb-10">
               <p className="text-[8px] text-center">Public Sale Starts on:</p>
               <div className="flex flex-row items-center justify-between space-x-16 mt-4 nm:mt-10">
@@ -107,14 +107,12 @@ function Home() {
           <Image src={images.nftcard2} objectFit="cover" />
         </div>
       </div>
-      {/* Utilidades */}
-
-      {/* Utilidades */}
-      <div className=" mt-10 flex flex-col items-center justify-center sm:justify-start w-full">
+      {/* Utilidades mobile */}
+      <div className="nm:hidden mt-10 flex flex-col items-center justify-center sm:justify-start w-full">
         <Faq />
       </div>
       {/* Metaverse Compatibility */}
-      <div className="mt-10">
+      <div className="mt-10 nm:hidden">
         <div className="px-8">
           <Image src={images.render3} className="rounded-3xl" />
         </div>
@@ -212,29 +210,126 @@ function Home() {
           </div>
         </div>
       </div>
-
-      {/* conoce el team */}
-      <div className="h-auto mt-20">
-        <div className="px-8">
-          <p className="text-[8px]">About The Creators</p>
-          <h1 className="text-[36px]">BEYOOND TEAM</h1>
-          <div className="mt-6 space-y-5">
-            <p className="text-[11px]">
-              Michel Rojkind Halpert nació en México y estudió en la Universidad Iberoamericana ubicada en la Ciudad de México.
-            </p>
-            <p className="text-[11px]">
-              Es reconocido como un emblema de la arquitectura internacional por haber participado en la construcción de numerosos proyectos exitosos alrededor del mundo.
-            </p>
-
-            <p className="text-[11px]">
-              Hoy se encuentra profundamente conectado a la introspección del ser y ha dado nacimiento a este proyecto para reflexionar sobre cómo la realidad virtual cambiará nuestra vida profesional y espiritual.
-            </p>
-            <p className="text-[11px]">
-              Bienvenidos a Beyoond.
-            </p>
+      {/* Utilidades desktop */}
+      <div className="h-auto mt-[4rem] hidden  nm:flex border-t-2 border-b-2 border-black">
+        <div className="w-full flex flex-row">
+          {/* Compatibilities desktop */}
+          <div className="w-[50%] px-[4rem] flex flex-col border-r-2 border-black">
+            <div className="flex flex-col space-y-10 ">
+              <div className="mt-10">
+                <Image src={images.renderdesktop1} />
+              </div>
+              <div className="">
+                <div className="space-y-6">
+                  <p className="text-[15px]">Metaverse Compatibility</p>
+                  <div className="flex mt-6 flex-row justify-between text-[17px] underline font-bold">
+                    <div className="flex  flex-col">
+                      <p>Decentraland</p>
+                      <p>Spatial.io</p>
+                    </div>
+                    <div className="flex flex-col">
+                      <p>VR Chat</p>
+                      <p>Unity</p>
+                    </div>
+                    <div className="flex flex-col">
+                      <p>Unreal Engine 5</p>
+                      <p>Nvidia Omniverse</p>
+                    </div>
+                  </div>
+                  <div>
+                    <p>
+                      Files Formats Included
+                    </p>
+                    <div className="flex flex-row space-x-20 w-full">
+                      <div className="mt-10 w-[25%] space-y-4">
+                        <h1 className="font-bold text-[17px]">FBX</h1>
+                        <div className=" space-y-2 flex flex-col">
+                          <div className="bg-[#D9D9D9] py-1">
+                            <h1 className="text-[#5A5A5A] text-center text-[12px]">
+                              Highest Fidelity | 378MB
+                            </h1>
+                          </div>
+                          <div className="bg-[#D9D9D9] py-1">
+                            <h1 className="text-[#5A5A5A] text-center text-[12px]">
+                              Highest Fidelity | 378MB
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-10 space-y-4 w-[25%]">
+                        <h1 className="font-bold text-[17px]">GLB</h1>
+                        <div className=" space-y-2">
+                          <div className="bg-[#D9D9D9] py-1">
+                            <h1 className="text-[#5A5A5A] text-center text-[12px]">
+                              Highest Fidelity | 378MB
+                            </h1>
+                          </div>
+                          <div className="bg-[#D9D9D9] py-1">
+                            <h1 className="text-[#5A5A5A] text-center text-[12px]">
+                              Lowest Fidelity | 37MB
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-10 space-y-4 w-[25%]">
+                        <h1 className="font-bold text-[17px]">VOX</h1>
+                        <div className=" space-y-2">
+                          <div className="bg-[#D9D9D9] py-1">
+                            <h1 className="text-[#5A5A5A] text-center text-[12px]">
+                              Highest Fidelity | 378MB
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-10 mb-10 space-y-4 w-[25%]">
+                      <h1 className="font-bold text-[17px]">USD</h1>
+                      <div className=" space-y-2 mb-10">
+                        <div className="bg-[#D9D9D9] py-1">
+                          <h1 className="text-[#5A5A5A] text-center text-[12px]">
+                            Highest Fidelity | 378MB
+                          </h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Utilities desktop */}
+          <div className="w-[50%]">
+            <Faq />
           </div>
         </div>
-        <div className="flex flex-row w-full overflow-scroll no-scrollbar select-none items-start justify-start mt-10 space-x-4">
+      </div>
+      {/* conoce el team */}
+      <div className="h-auto mt-20  nm:w-full">
+        <div className="px-8 nm:flex nm:flex-row">
+          <div className="nm:flex nm:flex-col nm:px-20 nm:justify-center nm:w-[40%]">
+            <p className="text-[8px]">About The Creators</p>
+            <h1 className="text-[36px]">BEYOOND TEAM</h1>
+          </div>
+          <div className="mt-6 space-y-5 nm:px-20 nm:w-[60%]">
+            <div className="nm:flex nm:w-full nm:flex-col">
+              <p className="text-[11px] nm:text-[15px]">
+                Michel Rojkind Halpert nació en México y estudió en la Universidad Iberoamericana ubicada en la Ciudad de México.
+              </p>
+              <p className="text-[11px] nm:text-[15px]">
+                Es reconocido como un emblema de la arquitectura internacional por haber participado en la construcción de numerosos proyectos exitosos alrededor del mundo.
+              </p>
+
+              <p className="text-[11px] nm:text-[15px]">
+                Hoy se encuentra profundamente conectado a la introspección del ser y ha dado nacimiento a este proyecto para reflexionar sobre cómo la realidad virtual cambiará nuestra vida profesional y espiritual.
+              </p>
+              <p className="text-[11px] nm:text-[15px]">
+                Bienvenidos a Beyoond.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* mobile gallery */}
+        <div className="flex nm:hidden flex-row w-full overflow-scroll no-scrollbar select-none items-start justify-start mt-10 space-x-4">
           <div className="min-w-[80%] flex ml-8">
             <Image src={images.rojkind} className="" />
           </div>
@@ -242,9 +337,18 @@ function Home() {
             <Image src={images.rojkind} />
           </div>
         </div>
+        {/* desktop gallery */}
+        <div className="hidden nm:flex flex-row w-full overflow-scroll no-scrollbar select-none items-start justify-start mt-10 space-x-4 ">
+          <div className="min-w-[80%] ml-[6rem] flex">
+            <Image src={images.rojkinddesktop} className="" />
+          </div>
+          <div className="min-w-[80%] flex">
+            <Image src={images.rojkinddesktop} />
+          </div>
+        </div>
       </div>
-      {/* conoce el team */}
-      <div className="h-auto mt-20 flex flex-col items-center justify-center">
+      {/* unique places mobile */}
+      <div className="h-auto mt-20 flex nm:hidden flex-col items-center justify-center">
         <div className="flex w-[80%] flex-col items-center justify-center rounded-xl border-[1px] border-black">
           <div className="flex flex-col px-6">
             <div className="flex flex-row items-center justify-center w-full mt-2 space-x-2">
@@ -267,6 +371,39 @@ function Home() {
                 <Image src={images.consciente} />
               </div>
               <p className="text-[55px]">consciously</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* unique places desktop */}
+      <div className="h-auto mt-20 nm:flex hidden flex-col items-center justify-center">
+        <div className="flex w-[80%] flex-col px-6  rounded-xl border-[1px] border-black">
+          <div className="flex flex-col">
+            <div className="flex flex-row items-center justify-center w-full mt-2 space-x-10">
+              <div>
+                <p className="text-[100px] text-left">
+                  Unique
+                </p>
+              </div>
+              <div>
+                <Image src={images.unique} objectFit="contain" />
+              </div>
+              <p className="text-[100px] leading-[6rem]">places</p>
+            </div>
+            <div className="flex items-center flex-col justify-center">
+              <div className="flex flex-row items-center  space-x-8">
+                <p className="text-[100px]">to</p>
+                <div className="mt-4 px-1 ">
+                  <Image src={images.meditate} />
+                </div>
+                <p className="text-[100px]">meditate</p>
+              </div>
+              <div className="flex flex-row items-center  space-x-8">
+                <div className="mt-1 px-1">
+                  <Image src={images.consciosuly} />
+                </div>
+                <p className="text-[100px]">consciously</p>
+              </div>
             </div>
           </div>
         </div>
