@@ -3,7 +3,7 @@ import React from 'react';
 function Main() {
   return (
     <div className="main font-sfpro overflow-x-auto">
-      <video autoPlay loop muted src="/assets/videobanner.mp4" typeof="video/mp4" />
+      <video autoPlay loop muted playsinline controls src="/assets/videobanner.mp4" typeof="video/mp4" />
       <div className="content1">
         <h1 className="font-bold  ml-10 text-[6vh]">
           Tu espacio virtual
