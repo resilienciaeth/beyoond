@@ -5,8 +5,8 @@ import React, { useEffect } from 'react';
 import images from '../public/assets';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
-import faq from '../components/Faq';
 import Faq from '../components/Faq';
+import Main from '../components/Main.jsx';
 
 function Home() {
   useEffect(() => {
@@ -14,26 +14,17 @@ function Home() {
   }, []);
 
   return (
-    <div className="font-sfpro text-black bg-beyond-1">
+    <div className="font-sfpro overflow-x-hidden text-black bg-beyond-1 ">
+      <Main />
       {/* Hero */}
-      <div className="relative bg-render nm:bg-renderdesktop bg-cover bg-no-repeat h-screen">
-        <div className="flex h-full flex-col ml-5 nm:ml-16 justify-center items-start">
-          <h1 className="text-white mt-[25rem] text-[4vh] nm:text-[5vh]  nm:mt-0 mr-10 font-sfpro font-bold leading-[5vh] nm:leading-[70px] nm:w-[50vh]">
-            Tu espacio virtual diseñado por Rojkind.
-          </h1>
-          <p className="text-[1.5vh] underline cursor-pointer font-sfpro text-white">
-            Conocer más.
-          </p>
-        </div>
-      </div>
       {/* Arquitectura */}
       <div className=" nm:h-[60vh]">
         <div className="flex bg-green bg-contain bg-center nm:bg-bottom bg-no-repeat nm: items-center nm:justify-center flex-col nm:flex-row h-full nm:px-[10rem]">
           <div className="flex flex-col justify-center items-center nm:px-10 nm:justify-center nm:items-start mt-20 nm:w-[40%]">
             <h1 className="text-[#303030] font-sfpro font-bold text-[27px] nm:text-[32px] text-center nm:leading-[32px] nm:text-left">Arquitectura y tecnología intangible.</h1>
-            <p className="text-[15px] nm:text-[16px] mt-2 text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] ">Desafiando lo establecido y olvidando las leyes de la física, Michel Rojkind se traslada hacia el metaverso para construir allí espacios NFT que podrán ser transferidos dentro de la Web 3.0.</p>
+            <p className="text-[15px] nm:text-[16px] mt-2 text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] ">Desafiando lo establecido y olvidando las leyes de la física, nos trasladamos hacia el metaverso para construir allí espacios NFT que podrán ser transferidos dentro de la Web 3.0</p>
             <p className="text-[15px] nm:text-[16px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">
-              En este mundo virtual se encontrará con su comunidad para
+              En este mundo virtual Michel Rojkind  se encontrará con su comunidad para
               {' '}
               <span className="font-bold">reflexionar</span>
               {' '}
@@ -43,17 +34,17 @@ function Home() {
             <button className="mt-6 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black py-2 px-10 text-[12px]">Discover</button>
           </div>
           <div className="flex nm:hidden flex-col items-center justify-center mt-[2rem] nm:w-[50%]">
-            <Image src={images.render2} objectFit="contain" />
+            <Image src={images.section2} objectFit="contain" />
           </div>
           <div className="nm:flex hidden flex-col items-center rounded-md justify-center mt-[2rem] nm:w-[40%]">
-            <Image src={images.render3} objectFit="contain" className="rounded-2xl" />
+            <Image src={images.section2} objectFit="contain" className="rounded-2xl" />
           </div>
         </div>
       </div>
       {/* Tarjeta */}
       <div className=" nm:h-auto flex mt-10 flex-col nm:flex-row-reverse">
         <div className=" nm:h-auto nm:w-[50%]  flex items-center nm:justify-center flex-col">
-          <div className="font-bold text-[35px] nm:text-[70px] text-black">The Oasis.</div>
+          <div className="font-bold text-[35px] nm:text-[70px] text-black">AXKAN.</div>
           <div className="flex flex-row mt-4 space-x-4">
             <div className="flex flex-row">
               <div>
@@ -76,7 +67,7 @@ function Home() {
           </div>
           <div className=" border-2 border-[#CBCBCB] mt-4 nm:mt-10 w-[80%] nm:w-[40%] rounded-3xl flex flex-col items-center">
             <p className="text-[10px] nm:text-[15px] mt-4 nm:mt-10">Precio de lanzamiento</p>
-            <p className="text-[35px] nm:text-[50px] font-bold">$300 USD</p>
+            <p className="text-[35px] nm:text-[50px] font-bold">$100 USD</p>
             <div className="flex flex-col mt-4 mb-6 nm:mb-10">
               <p className="text-[8px] text-center">Public Sale Starts on:</p>
               <div className="flex flex-row items-center justify-between space-x-16 mt-4 nm:mt-10">
@@ -101,10 +92,10 @@ function Home() {
           </div>
         </div>
         <div className="nm:hidden nm:h-auto nm:w-[50%] mt-12 flex justify-center mb-10">
-          <Image src={images.nftcard} />
+          <Image src={images.gallery} />
         </div>
         <div className="hidden nm:h-auto nm:w-[50%] mt-12 nm:flex justify-end">
-          <Image src={images.nftcard2} objectFit="cover" />
+          <Image src={images.gallery} objectFit="cover" />
         </div>
       </div>
       {/* Utilidades mobile */}
@@ -211,13 +202,13 @@ function Home() {
         </div>
       </div>
       {/* Utilidades desktop */}
-      <div className="h-auto mt-[4rem] hidden  nm:flex border-t-2 border-b-2 border-black">
+      <div className="h-auto mt-[12rem] hidden  nm:flex border-t-2 border-b-2 border-black">
         <div className="w-full flex flex-row">
           {/* Compatibilities desktop */}
           <div className="w-[50%] px-[4rem] flex flex-col border-r-2 border-black">
             <div className="flex flex-col space-y-10 ">
               <div className="mt-10">
-                <Image src={images.renderdesktop1} />
+                <Image src={images.utilities1} width={714} height={415} />
               </div>
               <div className="">
                 <div className="space-y-6">
@@ -298,54 +289,66 @@ function Home() {
             </div>
           </div>
           {/* Utilities desktop */}
-          <div className="w-[50%]">
-            <Faq />
+          <Faq />
+        </div>
+      </div>
+      {/* diseña tu interior */}
+      <div className="h-screen bg-green2 flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center">
+          <div className="flex items-center justify-center">
+            View on Spatial
           </div>
+          <div className="md:text-[80px] text-[25px] uppercase">
+            Diseña tu interior
+          </div>
+          <div>
+            <button className="md:mt-6 border-[1px] rounded-[0.3rem] bg-white text-black md:py-2 py-1 md:px-10 px-6 text-[12px]">Discover</button>
+          </div>
+
         </div>
       </div>
       {/* conoce el team */}
       <div className="h-auto mt-20  nm:w-full">
-        <div className="px-8 nm:flex nm:flex-row">
-          <div className="nm:flex nm:flex-col nm:px-20 nm:justify-center nm:w-[40%]">
-            <p className="text-[8px]">About The Creators</p>
-            <h1 className="text-[36px]">BEYOOND TEAM</h1>
+        <div className="nm:flex nm:flex-col nm:justify-center items-center">
+          <p className="text-[18px]">About The Creators</p>
+          <h1 className="text-[90px]">Conoce el Equipo Creativo</h1>
+          <p className="text-[15px] px-[25rem]">
+            Michel Rojkind Halpert nació en México y estudió en la Universidad Iberoamericana ubicada en la Ciudad de México.
+            Es reconocido como un emblema de la arquitectura internacional por haber participado en la construcción de numerosos proyectos exitosos alrededor del mundo.
+          </p>
+          <div className="flex flex-row space-x-12 mt-[5rem]">
+            <div>
+              <Image src={images.rojkind} />
+            </div>
+            <div>
+              <Image src={images.diego} />
+            </div>
+            <div>
+              <Image src={images.nico} />
+            </div>
+            <div>
+              <Image src={images.dani} />
+            </div>
+            <div>
+              <Image src={images.mati} />
+            </div>
           </div>
-          <div className="mt-6 space-y-5 nm:px-20 nm:w-[60%]">
-            <div className="nm:flex nm:w-full nm:flex-col">
-              <p className="text-[11px] nm:text-[15px]">
-                Michel Rojkind Halpert nació en México y estudió en la Universidad Iberoamericana ubicada en la Ciudad de México.
-              </p>
-              <p className="text-[11px] nm:text-[15px]">
-                Es reconocido como un emblema de la arquitectura internacional por haber participado en la construcción de numerosos proyectos exitosos alrededor del mundo.
-              </p>
-
-              <p className="text-[11px] nm:text-[15px]">
-                Hoy se encuentra profundamente conectado a la introspección del ser y ha dado nacimiento a este proyecto para reflexionar sobre cómo la realidad virtual cambiará nuestra vida profesional y espiritual.
-              </p>
-              <p className="text-[11px] nm:text-[15px]">
-                Bienvenidos a Beyoond.
-              </p>
+          <div className="flex flex-row space-x-12 mt-[5rem]">
+            <div>
+              <Image src={images.mike} />
+            </div>
+            <div>
+              <Image src={images.tomi} />
+            </div>
+            <div>
+              <Image src={images.jose} />
+            </div>
+            <div>
+              <Image src={images.kevin} />
             </div>
           </div>
         </div>
-        {/* mobile gallery */}
-        <div className="flex nm:hidden flex-row w-full overflow-scroll no-scrollbar select-none items-start justify-start mt-10 space-x-4">
-          <div className="min-w-[80%] flex ml-8">
-            <Image src={images.rojkind} className="" />
-          </div>
-          <div className="min-w-[80%] flex">
-            <Image src={images.rojkind} />
-          </div>
-        </div>
-        {/* desktop gallery */}
-        <div className="hidden nm:flex flex-row w-full overflow-scroll no-scrollbar select-none items-start justify-start mt-10 space-x-4 ">
-          <div className="min-w-[80%] ml-[6rem] flex">
-            <Image src={images.rojkinddesktop} className="" />
-          </div>
-          <div className="min-w-[80%] flex">
-            <Image src={images.rojkinddesktop} />
-          </div>
-        </div>
+
       </div>
       {/* unique places mobile */}
       <div className="h-auto mt-20 flex nm:hidden flex-col items-center justify-center">

@@ -1,5 +1,7 @@
 import { ThemeProvider } from 'next-themes';
 import Script from 'next/script';
+import Home from '.';
+import Main from '../components/Main';
 import Navbar from '../components/Navbar';
 
 import '../styles/globals.css';
@@ -10,8 +12,7 @@ function MyApp({ Component, pageProps }) {
       attribute="class"
     >
       <div className="bg-meta-gray min-h-screen max-h-screen">
-        <Navbar />
-        <Component {...pageProps} />
+        <Home />
 
       </div>
 

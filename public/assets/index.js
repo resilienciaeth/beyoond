@@ -19,9 +19,24 @@ import meditar from './meditar.png';
 import consciente from './consciente.png';
 import renderdesktop1 from './renderdesktop1.png';
 import rojkinddesktop from './rojkinddesktop.png';
-import unique from './lugaresdesktop.png';
-import meditate from './meditardesktop.png';
+import unique from './unique.png';
+import meditate from './meditatedesktop.png';
 import consciosuly from './conscientedesktop.png';
+import gallery1 from './gallery1.jpeg';
+import gallery2 from './gallery2.jpeg';
+import gallery3 from './gallery3.jpeg';
+import gallery4 from './gallery4.jpeg';
+import section2 from './section2.png';
+import gallery from './gallery.png';
+import utilities1 from './utilities1.png';
+import diego from './diego.png';
+import nico from './nico.png';
+import dani from './dani.png';
+import mati from './mati.png';
+import mike from './mike.png';
+import tomi from './tomi.png';
+import jose from './jose.png';
+import kevin from './kevin.png';
 
 export default {
   menu,
@@ -48,5 +63,20 @@ export default {
   unique,
   meditate,
   consciosuly,
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  section2,
+  gallery,
+  utilities1,
+  diego,
+  nico,
+  dani,
+  mati,
+  mike,
+  tomi,
+  jose,
+  kevin,
 
 };

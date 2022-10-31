@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
 
 import images from '../public/assets';
@@ -37,16 +36,15 @@ function MenuItems({ isMobile, active, setActive }) {
 }
 
 function Navbar() {
-  const { theme, setTheme } = useTheme();
   const [active, setActive] = useState('Home');
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="flexBetween bg-beyond-1 w-full fixed z-10  flex-row ">
-      <div className="flex mt-4 mb-4 px-4 flex-1 flex-row justify-start items-center ">
+      <div className="flex mt-2 mb-4 px-4 flex-1 flex-row justify-start items-center ">
         <Link href="/">
           <div className="flexCenter cursor-pointer">
-            <Image src={images.logo} />
+            <Image src={images.logo} width={127} height={61} />
           </div>
         </Link>
       </div>
@@ -54,7 +52,6 @@ function Navbar() {
         <div className="hidden">
           <ul className="list-none flexCenter flex-row ">
             <MenuItems active={active} setActive={setActive} router={router} />
-
           </ul>
         </div>
         <div className="flex">
@@ -81,7 +78,7 @@ function Navbar() {
             )}
 
           {isOpen && (
-          <div className="fixed bg-meta-gray h-screen z-10 inset-0 overflow-y-hidden top-10 md:top-12 nav-h flex justify-center items-center flex-col">
+          <div className="fixed bg-beyond-1 h-screen z-10 inset-0 overflow-y-hidden top-10 md:top-12 nav-h flex justify-center items-center flex-col">
             <div className="flex-1 p-4">
               <MenuItems active={active} setActive={setActive} isMobile className="items-center" />
             </div>

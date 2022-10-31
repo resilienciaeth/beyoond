@@ -11,7 +11,7 @@ function Faq() {
   };
 
   return (
-    <div className="mt-10 nm:mt-[6rem] flex flex-col items-center justify-center sm:justify-start w-full">
+    <div className="mt-10 nm:mt-[6rem] flex flex-col items-center justify-center sm:justify-start w-[50%] bg-utilities">
       <div className="flex ">
         <h1 className="text-[25px] nm:text-[40px] font-bold">What are the utilities?</h1>
       </div>
@@ -32,7 +32,7 @@ function Faq() {
 const data = [
   {
     question: '01. A Private Space in the Metaverse.',
-    answer: 'Cada NFT es un espacio diseñado por Michel Rojkind para experimentar en el metaverso. Aquí te encontrarás inmerso en una sala virtual en la que podrás reunirte con quien quieras. De hecho, en una de estas salas es donde Rojkind se reunirá con la comunidad.',
+    answer: 'Cada NFT es un espacio diseñado por Michel Rojkind habitable en el metaverso, aquí te encontrarás inmerso en una sala virtual en la que podrás reunirte con quien quieras. De hecho, en una de estas salas es donde Rojkind se reunirá con la comunidad.',
   },
   {
     question: '02. Private Virtual Events.',
