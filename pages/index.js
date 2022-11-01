@@ -417,9 +417,11 @@ function Home() {
               <Image src={images.jose} />
               </div>
             </div>
-            <div className='max-w-[160px] space-x-4 flex mt-8 flex-row'>
+            <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
             <div>
               <Image src={images.kevin} />
+              </div>
+              <div className='min-w-[160px]'>
               </div>
             </div>
           </div>
