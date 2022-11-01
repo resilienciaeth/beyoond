@@ -3,7 +3,7 @@ import React from 'react';
 function Main() {
   return (
     <div className="main font-sfpro overflow-x-auto">
-      <video preload="true" autoPlay muted loop playsinline>
+      <video preload="true" autoPlay muted loop playsInline>
         <source src="/assets/videobanner.mp4.mp4" typeof="video/mp4" />
       </video>
       <div className="content1">
