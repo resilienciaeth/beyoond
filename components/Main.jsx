@@ -4,7 +4,7 @@ function Main() {
   return (
     <div className="main font-sfpro overflow-x-auto">
       <video preload autoPlay muted loop playsinline>
-        <source src="/assets/videobanner.mp4" typeof="video/mp4" />
+        <source src="/assets/videobanner.mp4.mp4" typeof="video/mp4" />
       </video>
       <div className="content1">
         <h1 className="font-bold  ml-10 text-[6vh]">
