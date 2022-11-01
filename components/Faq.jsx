@@ -11,7 +11,7 @@ function Faq() {
   };
 
   return (
-    <div className="mt-10 nm:mt-[6rem] flex flex-col items-center justify-center sm:justify-start w-[50%]">
+    <div className="mt-10 nm:mt-[6rem] flex flex-col items-center justify-center sm:justify-start nm:w-[50%]">
       <div className="flex ">
         <h1 className="text-[25px] nm:text-[40px] font-bold">Conoce las utilidades</h1>
       </div>

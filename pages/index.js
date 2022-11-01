@@ -27,20 +27,22 @@ function Home() {
         <Image src={images.logo} width={205} height={95} />
         </div>
         <ul className="hidden nm:flex space-x-8 uppercase text-[15px]">
-          <li className="p-4">Home</li>
-          <li className="p-4">Company</li>
+          <li className="p-4">FAQ</li>
+          <li className="p-4">Twitter</li>
           <button className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
         </ul>
         <div className='cursor-pointer z-20 block nm:hidden' onClick={handleNav}>
           {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
         </div>
         <div className={!nav ? 'fixed left-0 top-0 w-full border-r border-r-gray-700 z-10 h-full bg-beyond-1 ease-in-out duration-500' : 'fixed left-[-100%]' }>
-          <ul className="pt-24 uppercase">
-            <li className="p-4">Home</li>
-            <li className="p-4">Company</li>
-            <li className="p-4">Resources</li>
-            <li className="p-4">About</li>
-            <li className="p-4">Contact</li>
+          <div className='mt-10 px-6'>
+          <Image src={images.logo} width={200} height={100} />
+          </div>
+          <ul className="pt-24 px-10 uppercase font-bold">
+            <li className="p-4 text-[30px]">FAQ</li>
+            <li className="p-4 text-[30px]">Twitter</li>
+            <li className="p-4 text-[30px]">Resources</li>
+            <button className="uppercase text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
           </ul>
         </div>
         </nav>
@@ -69,7 +71,7 @@ function Home() {
             <button className="mt-6 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black py-2 px-10 text-[12px]">Discover</button>
           </div>
           <div className="flex nm:hidden flex-col items-center justify-center mt-[2rem] nm:w-[50%]">
-            <Image src={images.section2} objectFit="contain" />
+            <Image src={images.section2mb} objectFit="contain" className='rounded-2xl' />
           </div>
           <div className="nm:flex hidden flex-col items-center rounded-md justify-center mt-[2rem] nm:w-[40%]">
             <Image src={images.section2} objectFit="contain" className="rounded-2xl" />
@@ -127,7 +129,7 @@ function Home() {
           </div>
         </div>
         <div className="nm:hidden nm:h-auto nm:w-[50%] mt-12 flex justify-center mb-10">
-          <Image src={images.gallery} />
+          <Image src={images.gallerymb} />
         </div>
         <div className="hidden nm:h-auto nm:w-[50%] mt-12 nm:flex justify-end">
           <Image src={images.gallery} objectFit="cover" />
@@ -343,30 +345,31 @@ function Home() {
       </div>
       {/* conoce el team */}
       <div className="h-auto mt-20  nm:w-full">
-        <div className="nm:flex nm:flex-col nm:justify-center items-center">
-          <p className="text-[18px]">About The Creators</p>
-          <h1 className="text-[90px]">Conoce el Equipo Creativo</h1>
-          <p className="text-[15px] text-center px-[25rem]">
+        <div className="nm:flex nm:flex-col justify-center nm:justify-center items-center">
+          <p className="text-center text-[10px] nm:text-[18px]">About The Creators</p>
+          <h1 className=" text-[40px] text-center nm:text-[90px]">Conoce al<br />Equipo Creativo</h1>
+          <p className="text-[12px] nm:text-[15px] text-center px-10 nm:px-[25rem]">
             Michel Rojkind junto a su equipo de Rojkind Arquitectos une fuerzas con Naked Meta para lanzar Beyoond, un proyecto que quiere ayudar a miles de arquitectos alrededor del mundo a descubrir el apasionante mundo de diseñar espacios que desafian las leyes de la fisica. 
           </p>
-          <div className="flex flex-row space-x-12 mt-[5rem]">
-            <div>
+          {/*meet the team desktop */}
+          <div className="hidden nm:flex flex-row nm:space-x-12 space-x-0 px-8  mt-[5rem] ">
+            <div className='min-w-[180px]'>
               <Image src={images.rojkind} />
             </div>
-            <div>
+            <div className='min-w-[180px]'>
               <Image src={images.diego} />
             </div>
-            <div>
+            <div className='min-w-[180px]'>
               <Image src={images.nico} />
             </div>
-            <div>
+            <div className='min-w-[180px]'>
               <Image src={images.dani} />
             </div>
-            <div>
+            <div className='min-w-[180px]'>
               <Image src={images.mati} />
             </div>
           </div>
-          <div className="flex flex-row space-x-12 mt-[5rem]">
+          <div className="hidden nm:flex flex-row space-x-12 mt-[5rem]">
             <div>
               <Image src={images.mike} />
             </div>
@@ -378,6 +381,46 @@ function Home() {
             </div>
             <div>
               <Image src={images.kevin} />
+            </div>
+          </div>
+          {/*meet the team mobile */}
+          <div className='flex px-4 flex-col nm:hidden overflow-x-hidden space-y-6'>
+          <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
+            <div>
+              <Image src={images.rojkind} />
+              </div>
+              <div>
+              <Image src={images.diego} />
+              </div>
+            </div>
+            <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
+            <div>
+              <Image src={images.nico} />
+              </div>
+              <div>
+              <Image src={images.dani} />
+              </div>
+            </div>
+            <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
+            <div>
+              <Image src={images.mati} />
+              </div>
+              <div>
+              <Image src={images.mike} />
+              </div>
+            </div>
+            <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
+            <div>
+              <Image src={images.tomi} />
+              </div>
+              <div>
+              <Image src={images.jose} />
+              </div>
+            </div>
+            <div className='max-w-[160px] space-x-4 flex mt-8 flex-row'>
+            <div>
+              <Image src={images.kevin} />
+              </div>
             </div>
           </div>
         </div>

@@ -37,6 +37,8 @@ import mike from './mike.png';
 import tomi from './tomi.png';
 import jose from './jose.png';
 import kevin from './kevin.png';
+import section2mb from './section2mb.png';
+import gallerymb from './gallerymb.png';
 
 export default {
   menu,
@@ -78,5 +80,8 @@ export default {
   tomi,
   jose,
   kevin,
+  section2mb,
+  gallerymb,
+
 
 };
