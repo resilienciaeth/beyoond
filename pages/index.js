@@ -6,7 +6,7 @@ import images from '../public/assets';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import Faq from '../components/Faq';
-import Main from '../components/Main.jsx';
+import Main from '../components/Main';
 
 function Home() {
   useEffect(() => {

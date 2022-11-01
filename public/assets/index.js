@@ -1,5 +1,5 @@
 import menu from './menu.png';
-import cross from './cross.png';
+import cross from './cross.webp';
 import logo from './logo.png';
 import render1 from './rendermobile.png';
 import renderdesktop from './renderdesktop.png';

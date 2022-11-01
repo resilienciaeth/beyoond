@@ -1,94 +1,42 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+
 import Image from 'next/image';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineClose } from 'react-icons/ai';
 import Link from 'next/link';
 
 import images from '../public/assets';
 
-function MenuItems({ isMobile, active, setActive }) {
-  const generateLink = (i) => {
-    switch (i) {
-      case 0: return '/';
-      case 1: return '/nakedmeta';
-      case 2: return '/';
-      case 3: return '/';
-      default: return '/';
-    }
-  };
-
-  return (
-    <ul className={`list-none flexCenter  flex-row ${isMobile && 'flex-col h-full'}`}>
-      {['Instagram', 'Contáctanos', 'Proyectos', 'Carreras'].map((item, i) => (
-        <li
-          key={i}
-          onClick={() => {
-            setActive(item);
-          }}
-          className={`flex flex-row font-sfpro text-lg items-center font-semibold text-base text-black hover:text-slate-600 mx-3 ${active === item ? 'text-nft-black' : 'text-black'}`}
-        >
-          <Link href={generateLink(i)}>
-            {item}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 function Navbar() {
-  const [active, setActive] = useState('Home');
-  const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+  const Links = [
+    { name: 'HOME', link: '/' },
+    { name: 'SERVICE', link: '/' },
+    { name: 'INSTAGRAM', link: '/' },
+    { name: 'SPACE', link: '/' },
+  ];
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="flexBetween bg-beyond-1 w-full fixed z-10  flex-row ">
-      <div className="flex mt-2 mb-4 px-4 flex-1 flex-row justify-start items-center ">
-        <Link href="/">
-          <div className="flexCenter cursor-pointer">
-            <Image src={images.logo} width={127} height={61} />
-          </div>
-        </Link>
-      </div>
-      <div className="flex mt-4 mb-4 px-4 flex-initial flex-row justify-end ">
-        <div className="hidden">
-          <ul className="list-none flexCenter flex-row ">
-            <MenuItems active={active} setActive={setActive} router={router} />
-          </ul>
+    <div className="z-10 font-sfpro shadow-md w-full fixed top-0 left-0">
+      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
+        <div className="cursor-pointer flex items-center text-black">
+          BEYOOND
         </div>
-        <div className="flex">
-          {isOpen
-            ? (
-              <Image
-                src={images.cross}
-                objectFit="contain"
-                width={20}
-                height={20}
-                alt="close"
-                onClick={() => setIsOpen(false)}
-              />
-            ) : (
-              <Image
-                src={images.menu}
-                objectFit="contain"
-                width={25}
-                height={25}
-                alt="close"
-                onClick={() => setIsOpen(true)}
-
-              />
-            )}
-
-          {isOpen && (
-          <div className="fixed bg-beyond-1 h-screen z-10 inset-0 overflow-y-hidden top-10 md:top-12 nav-h flex justify-center items-center flex-col">
-            <div className="flex-1 p-4">
-              <MenuItems active={active} setActive={setActive} isMobile className="items-center" />
-            </div>
-            <div className="p-4 border-t" />
+        <div role="presentation" onClick={() => setOpen(!false)} onKeyDown={() => setOpen(!open)} className="absolute right-8 top-6 cursor-pointer md:hidden" />
+        <ul className="md:flex text-[15px] text-black md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in">
+          {
+          Links.map((Link) => (
+            <li key={Link.name} className="cursor-pointer text-[15px] md:ml-8 text-xl">
+              <a href={Link.link} className="text-black text-[15px] hover:text-gray-700 cursor-pointer">{Link.name}</a>
+            </li>
+          ))
+          }
+          <div className="md:ml-6">
+            <button className="uppercase text-[15px] border-black border-2 rounded-[6px] px-6 py-3 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
           </div>
-          )}
-
-        </div>
+        </ul>
       </div>
-    </nav>
+    </div>
   );
 }
 

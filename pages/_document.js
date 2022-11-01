@@ -3,6 +3,7 @@ import Document, {
 } from 'next/document';
 
 import Navbar from '../components/Navbar';
+import Nav from '../components/Nav';
 
 class MyDocument extends Document {
   render() {
@@ -24,7 +25,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          <Navbar />
+          <Nav />
           <Main />
           <NextScript />
         </body>
