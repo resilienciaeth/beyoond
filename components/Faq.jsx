@@ -11,9 +11,9 @@ function Faq() {
   };
 
   return (
-    <div className="mt-10 nm:mt-[6rem] flex flex-col items-center justify-center sm:justify-start w-[50%] bg-utilities">
+    <div className="mt-10 nm:mt-[6rem] flex flex-col items-center justify-center sm:justify-start w-[50%]">
       <div className="flex ">
-        <h1 className="text-[25px] nm:text-[40px] font-bold">What are the utilities?</h1>
+        <h1 className="text-[25px] nm:text-[40px] font-bold">Conoce las utilidades</h1>
       </div>
       <div className="w-full mt-10 border-t-[1px] border-black ">
         {data.map((item, i) => (
@@ -31,24 +31,28 @@ function Faq() {
 }
 const data = [
   {
-    question: '01. A Private Space in the Metaverse.',
-    answer: 'Cada NFT es un espacio diseñado por Michel Rojkind habitable en el metaverso, aquí te encontrarás inmerso en una sala virtual en la que podrás reunirte con quien quieras. De hecho, en una de estas salas es donde Rojkind se reunirá con la comunidad.',
+    question: '01. Tu espacio privado en el Metaverso.',
+    answer: 'Obtendrás un espacio coleccionable y utilizable en el metaverso, es un sitio virtual en el que podrás reunirte con quien lo desees. Allí es donde Rojkind se reunirá con la comunidad.',
   },
   {
-    question: '02. Private Virtual Events.',
-    answer: 'Acceso a eventos virtuales en vivo dentro del Metaverso con Michel Rojkind y toda la comunidad. Allí se hablará de temas como meditación, crecimiento personal, espacios virtuales, metaversos y arquitectura.',
+    question: '02.Obtén tu colecionable digital.',
+    answer: 'Tu espacio virtual es un colecionable digital. Al solo haber 1000, los miembros tendrán la oportunidad de revenderlo en el futuro si así lo desean.',
   },
   {
-    question: '03. Priority Access to Future Projects.',
-    answer: 'Obtienes acceso anticipado para los futuros lanzamientos de proyectos.',
+    question: '03. Acceso a una comunidad privada.',
+    answer: 'Serás parte de una comunidad de amantes de la arquitectura. Conocerás un entorno ideal para compartir información y conocimiento. Podrás hacer networking con otros amantes de la arquitectura y con Michel Rojkind.',
   },
   {
-    question: '04. Access to a Gated Community.',
-    answer: 'Accederás a un grupo privado en discord junto a Michel Rojkind y a todos los compradores del NFT.',
+    question: '04. Eventos virtuales.',
+    answer: 'Acceso a un evento mensual en vivo dentro del Metaverso junto a Michel Rojkind y toda la comunidad.',
   },
   {
-    question: '05. Build the Future with us.',
-    answer: 'Tendrás la posibilidad de presentar propuestas a Michel para aplicar en sus próximas colecciones y desarrollos en el metaverso.',
+    question: '05. Modifica tu espacio y concursa.',
+    answer: 'Cada comprador tendrá la posibilidad de modificar su espacio y participar de un concurso creativo, el ganador lo podrá lanzar como coleccionable a través de Beyoond.',
+  },
+  {
+    question: '05. Acceso Prioritario.',
+    answer: 'Cada miembro tendrá acceso prioritario a todos los futuros eventos y lanzamientos de Beyoond.',
   },
 ];
 export default Faq;

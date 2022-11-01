@@ -8,13 +8,13 @@ function Main() {
       </video>
       <div className="content1">
         <h1 className="font-bold  ml-10 text-[6vh]">
-          Tu espacio virtual
+        El espacio virtual
           {' '}
           <br />
-          diseñado por
+          que une amantes
           <br />
           {' '}
-          Rojkind
+          de la arquitectura.
         </h1>
         <p className="font-bold underline ml-10 cursor-pointer text-[20px] hover:text-black">
           Conocer más.

@@ -15,22 +15,26 @@ function Home() {
   }, []);
 
   const [nav, setNav] = useState(true);
+  const handleNav = () => {
+    setNav(!nav)
+  }
 
   return (
     <div>
-    <nav className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4  text-black">
-        <h1 className="w-full">BEYOOND</h1>
-        <ul className="hidden">
+    {/* navbar */}
+    <nav className="flex justify-between items-center nm:h-24 h-14 max-w-[1240px] mx-auto px-4  text-black">
+        <div className='max-w-[100px] nm:max-w-[205px]'>
+        <Image src={images.logo} width={205} height={95} />
+        </div>
+        <ul className="hidden nm:flex space-x-8 uppercase text-[15px]">
           <li className="p-4">Home</li>
           <li className="p-4">Company</li>
-          <li className="p-4">Resources</li>
-          <li className="p-4">About</li>
-          <li className="p-4">Contact</li>
+          <button className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
         </ul>
-        <div className='cursor-pointer' onClick={() => setNav(!nav)}>
+        <div className='cursor-pointer z-20 block nm:hidden' onClick={handleNav}>
           {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
         </div>
-        <div className="fixed left-0 top-0 w-[60%] border-r border-r-gray-700 z-10 h-full bg-beyond-1">
+        <div className={!nav ? 'fixed left-0 top-0 w-full border-r border-r-gray-700 z-10 h-full bg-beyond-1 ease-in-out duration-500' : 'fixed left-[-100%]' }>
           <ul className="pt-24 uppercase">
             <li className="p-4">Home</li>
             <li className="p-4">Company</li>
@@ -47,16 +51,21 @@ function Home() {
       <div className=" nm:h-[60vh]">
         <div className="flex bg-green bg-contain bg-center nm:bg-bottom bg-no-repeat nm: items-center nm:justify-center flex-col nm:flex-row h-full nm:px-[10rem]">
           <div className="flex flex-col justify-center items-center nm:px-10 nm:justify-center nm:items-start mt-20 nm:w-[40%]">
-            <h1 className="text-[#303030] font-sfpro font-bold text-[27px] nm:text-[32px] text-center nm:leading-[32px] nm:text-left">Arquitectura y tecnología intangible.</h1>
-            <p className="text-[15px] nm:text-[16px] mt-2 text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] ">Desafiando lo establecido y olvidando las leyes de la física, nos trasladamos hacia el metaverso para construir allí espacios NFT que podrán ser transferidos dentro de la Web 3.0</p>
-            <p className="text-[15px] nm:text-[16px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">
-              En este mundo virtual Michel Rojkind  se encontrará con su comunidad para
-              {' '}
-              <span className="font-bold">reflexionar</span>
-              {' '}
-              sobre la sociedad y arquitectura del futuro.
+            <h1 className="text-[#303030] font-sfpro font-bold text-[24px] nm:text-[24px] text-center nm:leading-[32px] nm:text-left">Una propuesta arquitectónica, tecnológica y colectiva.</h1>
+            <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">
+            Beyoond será el punto de partida para el nacimiento de una {' '}
+              <span className="font-bold">comunidad de amantes</span>
+              {' '}  de la arquitectura que experimentarán aprendizaje en tiempo real.
+              
             </p>
-            <p className="text-[15px] nm:text-[16px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">Beyoond toma aquello que es inalcanzable en el campo tangible para hacerlo realidad.</p>
+            <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">
+            {' '}
+              <span className="font-bold">Cada Comprador</span>
+              {' '} recibirá un espacio diseñado por Rojkind Arquitectos que invita a transitar una experiencia emocional. Estas construcciones inspiradas en estructuras antiguas funcionan como un portal de escape hacia otras realidades y temporalidades.
+            </p>
+            <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">En este interesante ambiente {' '}
+              <span className="font-bold">Michel Rojkind</span>
+              {' '}  se encontrará con la comunidad para reflexionar sobre el ser y la arquitectura del futuro. </p>
             <button className="mt-6 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black py-2 px-10 text-[12px]">Discover</button>
           </div>
           <div className="flex nm:hidden flex-col items-center justify-center mt-[2rem] nm:w-[50%]">
@@ -322,15 +331,14 @@ function Home() {
       <div className="h-screen bg-green2 flex flex-col items-center justify-center">
         <div className="flex flex-col items-center">
           <div className="flex items-center justify-center">
-            View on Spatial
+            Explora el espacio
           </div>
           <div className="md:text-[80px] text-[25px] uppercase">
-            Diseña tu interior
+            Contempla tu interior.
           </div>
           <div>
-            <button className="md:mt-6 border-[1px] rounded-[0.3rem] bg-white text-black md:py-2 py-1 md:px-10 px-6 text-[12px]">Discover</button>
+            <button className="md:mt-6 border-[1px] rounded-[0.3rem] bg-white text-black md:py-2 py-1 md:px-10 px-6 text-[12px]">Descúbrelo</button>
           </div>
-
         </div>
       </div>
       {/* conoce el team */}
@@ -338,9 +346,8 @@ function Home() {
         <div className="nm:flex nm:flex-col nm:justify-center items-center">
           <p className="text-[18px]">About The Creators</p>
           <h1 className="text-[90px]">Conoce el Equipo Creativo</h1>
-          <p className="text-[15px] px-[25rem]">
-            Michel Rojkind Halpert nació en México y estudió en la Universidad Iberoamericana ubicada en la Ciudad de México.
-            Es reconocido como un emblema de la arquitectura internacional por haber participado en la construcción de numerosos proyectos exitosos alrededor del mundo.
+          <p className="text-[15px] text-center px-[25rem]">
+            Michel Rojkind junto a su equipo de Rojkind Arquitectos une fuerzas con Naked Meta para lanzar Beyoond, un proyecto que quiere ayudar a miles de arquitectos alrededor del mundo a descubrir el apasionante mundo de diseñar espacios que desafian las leyes de la fisica. 
           </p>
           <div className="flex flex-row space-x-12 mt-[5rem]">
             <div>
@@ -411,27 +418,27 @@ function Home() {
             <div className="flex flex-row items-center justify-center w-full mt-2 space-x-10">
               <div>
                 <p className="text-[100px] text-left">
-                  Unique
+                  Ambientes
                 </p>
               </div>
               <div>
                 <Image src={images.unique} objectFit="contain" />
               </div>
-              <p className="text-[100px] leading-[6rem]">places</p>
+              <p className="text-[100px] leading-[6rem]">únicos</p>
             </div>
             <div className="flex items-center flex-col justify-center">
               <div className="flex flex-row items-center  space-x-8">
-                <p className="text-[100px]">to</p>
+                <p className="text-[100px]">para</p>
                 <div className="mt-4 px-1 ">
                   <Image src={images.meditate} />
                 </div>
-                <p className="text-[100px]">meditate</p>
+                <p className="text-[100px]">meditar</p>
               </div>
               <div className="flex flex-row items-center  space-x-8">
                 <div className="mt-1 px-1">
                   <Image src={images.consciosuly} />
                 </div>
-                <p className="text-[100px]">consciously</p>
+                <p className="text-[100px]">conscientemente</p>
               </div>
             </div>
           </div>
