@@ -1,19 +1,45 @@
 /* eslint-disable react/jsx-filename-extension */
 import Head from 'next/head';
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import images from '../public/assets';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import Faq from '../components/Faq';
 import Main from '../components/Main';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 function Home() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
 
+  const [nav, setNav] = useState(true);
+
   return (
+    <div>
+    <nav className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4  text-black">
+        <h1 className="w-full">BEYOOND</h1>
+        <ul className="hidden">
+          <li className="p-4">Home</li>
+          <li className="p-4">Company</li>
+          <li className="p-4">Resources</li>
+          <li className="p-4">About</li>
+          <li className="p-4">Contact</li>
+        </ul>
+        <div className='cursor-pointer' onClick={() => setNav(!nav)}>
+          {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        </div>
+        <div className="fixed left-0 top-0 w-[60%] border-r border-r-gray-700 z-10 h-full bg-beyond-1">
+          <ul className="pt-24 uppercase">
+            <li className="p-4">Home</li>
+            <li className="p-4">Company</li>
+            <li className="p-4">Resources</li>
+            <li className="p-4">About</li>
+            <li className="p-4">Contact</li>
+          </ul>
+        </div>
+        </nav>
     <div className="font-sfpro overflow-x-hidden text-black bg-beyond-1 ">
       <Main />
       {/* Hero */}
@@ -454,6 +480,7 @@ function Home() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

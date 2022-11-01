@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps }) {
       </div>
 
       <Script src="https://kit.fontawesome.com/4e0b8e54bb.js" crossOrigin="anonymous" />
-      <Script src="https://unpkg.com/ionicons@latest/dist/ionicons.js" />
     </ThemeProvider>
 
   );
