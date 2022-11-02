@@ -39,6 +39,9 @@ import jose from './jose.png';
 import kevin from './kevin.png';
 import section2mb from './section2mb.png';
 import gallerymb from './gallerymb.png';
+import gallery1sm from './gallery1small.png';
+import gallery2sm from './gallery2small.png';
+import gallery3sm from './gallery3small.png';
 
 export default {
   menu,
@@ -82,6 +85,9 @@ export default {
   kevin,
   section2mb,
   gallerymb,
+  gallery1sm,
+  gallery2sm,
+  gallery3sm,
 
 
 };

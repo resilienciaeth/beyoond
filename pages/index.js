@@ -8,6 +8,7 @@ import Aos from 'aos';
 import Faq from '../components/Faq';
 import Main from '../components/Main';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import Gallery from '../components/Gallery';
 
 function Home() {
   useEffect(() => {
@@ -128,12 +129,8 @@ function Home() {
             <button className="border-2 border-[#CBCBCB] text-gray-600 text-bold text-[10px] py-2 rounded-3xl">View Space in 3D</button>
           </div>
         </div>
-        <div className="nm:hidden nm:h-auto nm:w-[50%] mt-12 flex justify-center mb-10">
-          <Image src={images.gallerymb} />
-        </div>
-        <div className="hidden nm:h-auto nm:w-[50%] mt-12 nm:flex justify-end">
-          <Image src={images.gallery} objectFit="cover" />
-        </div>
+        {/*gallery */}
+       <Gallery />
       </div>
       {/* Utilidades mobile */}
       <div className="nm:hidden mt-10 flex flex-col items-center justify-center sm:justify-start w-full">

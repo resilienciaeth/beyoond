@@ -372,5 +372,28 @@ client:hover .client-description{
     transition: all 0.75s cubic-bezier(1,0,1,0);
 }
 
+.gallery-highlight {
+    width: 70%;
+    
+}
+
+.gallery-preview {
+    display: flex;
+    width: 30%;
+    justify-content: end;
+    justify-items: center;
+    border: 2px solid transparent;
+}
+
+.gallery-preview img {
+    flex-grow: 1;
+    height: 140px;
+    cursor: pointer;
+}
+
+img.gallery-active {
+    opacity: 1;
+}
+
 
 
