@@ -151,7 +151,7 @@ module.exports = {
     },
     screens: {
       lg: { min: '1800px' },
-      nm: { min: '1300px' },
+      nm: { min: '1401px' },
       md: { min: '850px' },
       sm: { min: '385px' },
       xs: { min: '300px' },

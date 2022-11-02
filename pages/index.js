@@ -9,6 +9,7 @@ import Faq from '../components/Faq';
 import Main from '../components/Main';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Gallery from '../components/Gallery';
+import Card from '../components/Card';
 
 function Home() {
   useEffect(() => {
@@ -23,11 +24,11 @@ function Home() {
   return (
     <div>
     {/* navbar */}
-    <nav className="flex justify-between items-center nm:h-24 h-14 max-w-[1240px] mx-auto px-4  text-black">
+    <nav className="flex font-sfpro justify-between items-center nm:h-24 h-14  px-4  text-black">
         <div className='max-w-[100px] nm:max-w-[205px]'>
         <Image src={images.logo} width={205} height={95} />
         </div>
-        <ul className="hidden nm:flex space-x-8 uppercase text-[15px]">
+        <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
           <li className="p-4">FAQ</li>
           <li className="p-4">Twitter</li>
           <button className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
@@ -49,11 +50,9 @@ function Home() {
         </nav>
     <div className="font-sfpro overflow-x-hidden text-black bg-beyond-1 ">
       <Main />
-      {/* Hero */}
       {/* Arquitectura */}
-      <div className=" nm:h-[60vh]">
-        <div className="flex bg-green bg-contain bg-center nm:bg-bottom bg-no-repeat nm: items-center nm:justify-center flex-col nm:flex-row h-full nm:px-[10rem]">
-          <div className="flex flex-col justify-center items-center nm:px-10 nm:justify-center nm:items-start mt-20 nm:w-[40%]">
+        <div className="flex bg-green nm:h-[60vh] bg-contain bg-center nm:bg-bottom bg-no-repeat nm: items-center nm:justify-start nm:space-x-10 flex-col nm:flex-row h-full nm:px-[10rem]">
+          <div className="flex flex-col justify-center items-center nm:px-10 nm:justify-center nm:items-start mt-10 nm:w-[50%]">
             <h1 className="text-[#303030] font-sfpro font-bold text-[24px] nm:text-[24px] text-center nm:leading-[32px] nm:text-left">Una propuesta arquitectónica, tecnológica y colectiva.</h1>
             <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">
             Beyoond será el punto de partida para el nacimiento de una {' '}
@@ -78,12 +77,14 @@ function Home() {
             <Image src={images.section2} objectFit="contain" className="rounded-2xl" />
           </div>
         </div>
-      </div>
       {/* Tarjeta */}
-      <div className=" nm:h-auto flex mt-10 flex-col nm:flex-row-reverse">
-        <div className=" nm:h-auto nm:w-[50%]  flex items-center nm:justify-center flex-col">
-          <div className="font-bold text-[35px] nm:text-[70px] text-black">AXKAN.</div>
-          <div className="flex flex-row mt-4 space-x-4">
+      <div className="w-full flex mt-10 flex-col nm:flex-row-reverse">
+    
+        <div className="nm:h-auto nm:w-[40%] flex items-center nm:items-start nm:justify-center flex-col">
+          <div className="font-bold text-center text-[35px] nm:text-[70px] nm:ml-6 text-black">
+            <h1 className='text-center'>AXK4N.</h1>
+          </div>
+          <div className="flex nm:ml-4 flex-row mt-4 space-x-4">
             <div className="flex flex-row">
               <div>
                 <Image src={images.creator} />
@@ -103,7 +104,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className=" border-2 border-[#CBCBCB] mt-4 nm:mt-10 w-[80%] nm:w-[40%] rounded-3xl flex flex-col items-center">
+          <div className=" border-2 border-[#CBCBCB] mt-4 nm:mt-10 w-[80%] nm:w-[40%] nm:min-w-[300px] rounded-3xl flex flex-col items-center">
             <p className="text-[10px] nm:text-[15px] mt-4 nm:mt-10">Precio de lanzamiento</p>
             <p className="text-[35px] nm:text-[50px] font-bold">$100 USD</p>
             <div className="flex flex-col mt-4 mb-6 nm:mb-10">
@@ -124,9 +125,9 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-5 w-[80%] nm:w-[40%] flex flex-col space-y-4">
-            <button className="bg-[#2373EA] text-white text-bold text-[10px] py-2 rounded-3xl">Enter the Pre-Sale</button>
-            <button className="border-2 border-[#CBCBCB] text-gray-600 text-bold text-[10px] py-2 rounded-3xl">View Space in 3D</button>
+          <div className="mt-5 w-[80%] nm:w-[40%] nm:min-w-[300px] flex flex-col space-y-4">
+            <button className="bg-[#2373EA] hover:bg-beyond-1 hover:border-2 hover:border-[#CBCBCB] hover:text-gray-600 text-white text-bold text-[12px] py-2 rounded-3xl">Enter the Pre-Sale</button>
+            <button className="border-2 border-[#CBCBCB] text-gray-600 bg-beyond-1 hover:bg-[#2373EA] hover:text-white text-bold text-[12px] py-2 rounded-3xl">View Space in 3D</button>
           </div>
         </div>
         {/*gallery */}
@@ -327,7 +328,7 @@ function Home() {
         </div>
       </div>
       {/* diseña tu interior */}
-      <div className="h-screen bg-green2 flex flex-col items-center justify-center">
+      <div className="h-[600px] nm:h-screen bg-green2 flex flex-col items-center justify-center">
         <div className="flex flex-col items-center">
           <div className="flex items-center justify-center">
             Explora el espacio
@@ -336,16 +337,16 @@ function Home() {
             Contempla tu interior.
           </div>
           <div>
-            <button className="md:mt-6 border-[1px] rounded-[0.3rem] bg-white text-black md:py-2 py-1 md:px-10 px-6 text-[12px]">Descúbrelo</button>
+            <button className="md:mt-6 border-[1px] rounded-[0.3rem] bg-white text-black md:py-2 py-1 md:px-10 px-6 text-[12px]">Descubre AXK4N</button>
           </div>
         </div>
       </div>
       {/* conoce el team */}
-      <div className="h-auto mt-20  nm:w-full">
+      <div className="h-auto mt-10  nm:w-full">
         <div className="nm:flex nm:flex-col justify-center nm:justify-center items-center">
           <p className="text-center text-[10px] nm:text-[18px]">About The Creators</p>
-          <h1 className=" text-[40px] text-center nm:text-[90px]">Conoce al<br />Equipo Creativo</h1>
-          <p className="text-[12px] nm:text-[15px] text-center px-10 nm:px-[25rem]">
+          <h1 className="text-[40px] leading-none text-center nm:text-[90px]">Conoce al<br />Equipo Creativo</h1>
+          <p className="text-[12px] nm:w-[70%] mt-2 nm:text-[15px] text-center px-10 nm:px-[25rem]">
             Michel Rojkind junto a su equipo de Rojkind Arquitectos une fuerzas con Naked Meta para lanzar Beyoond, un proyecto que quiere ayudar a miles de arquitectos alrededor del mundo a descubrir el apasionante mundo de diseñar espacios que desafian las leyes de la fisica. 
           </p>
           {/*meet the team desktop */}

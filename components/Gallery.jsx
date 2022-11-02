@@ -11,10 +11,10 @@ const Gallery = () => {
 
     const [selectedImg, setSelectedImg] = useState(images1[0]);
   return (
-    <div className='nm:w-[50%] mt-10 nm:mt-0 w-full'>
+    <div className='nm:w-[50%] mt-10 flex nm:mt-0 w-full'>
         <div className='flex items-center justify-end flex-col'>
-            <img src={selectedImg} className='w-[80%] nm:w-[70%] relative rounded-2xl' alt='Selected' />
-            <div className='nm:flex flex nm:w-[30%] nm:justify-end nm:items-center nm:border-2 nm:border-solid nm:border-transparent space-x-3 nm:mb-10 mb-4 absolute'>
+            <img src={selectedImg} className='w-[80%] nm:w-[90%] relative rounded-2xl' alt='Selected' />
+            <div className='nm:flex flex nm:w-[25%] nm:max-w-[400px] nm:justify-end nm:items-center nm:border-2 nm:border-solid nm:border-transparent space-x-3 nm:space-x-6 nm:mb-10 mb-4 absolute'>
                 {images1.map((img, index) => (
                     <img className={ selectedImg === img ? 'border-2 nm:flex-grow rounded-2xl h-[80px] cursor-pointer nm:h-[140px] ' : 
                     'opacity-20 cursor-pointer h-[80px] nm:h-[140px] nm:flex-grow  rounded-2xl' } key={index} src={img} alt='dog'

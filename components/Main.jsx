@@ -7,7 +7,7 @@ function Main() {
         <source src="/assets/videobanner.mp4.mp4" typeof="video/mp4" />
       </video>
       <div className=" absolute
-       w-full h-full top-0 flex flex-col justify-center mt-[13rem] nm:mt-0 nm:justify-center items-start text-white">
+        h-full top-0 flex flex-col justify-center mt-[13rem] nm:mt-[12rem] nm:ml-[3rem] nm:justify-center items-start text-white">
         <h1 className="font-bold  ml-10 text-[32px] nm:text-[6vh]">
         El espacio virtual
           {' '}
