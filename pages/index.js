@@ -29,7 +29,7 @@ function Home() {
         <Image src={images.logo} width={205} height={95} />
         </div>
         <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
-          <li className="p-4">FAQ</li>
+          <li onClick={() => window.open('/FAQ', '_self')} className="p-4">FAQ</li>
           <li className="p-4">Twitter</li>
           <button className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
         </ul>
@@ -41,8 +41,8 @@ function Home() {
           <Image src={images.logo} width={200} height={100} />
           </div>
           <ul className="pt-24 px-10 uppercase font-bold">
-            <li className="p-4 text-[30px]">FAQ</li>
-            <li className="p-4 text-[30px]">Twitter</li>
+            <li onClick='/FAQ' className="p-4 text-[30px]">FAQ</li>
+            <li onClick={() => window.open('https://twitter.com/Beyoond_io')} className="p-4 text-[30px]">Twitter</li>
             <li className="p-4 text-[30px]">Resources</li>
             <button className="uppercase text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
           </ul>

@@ -42,6 +42,7 @@ import gallerymb from './gallerymb.png';
 import gallery1sm from './gallery1small.png';
 import gallery2sm from './gallery2small.png';
 import gallery3sm from './gallery3small.png';
+import faqbanner from './faqbanner.png';
 
 export default {
   menu,
@@ -88,6 +89,7 @@ export default {
   gallery1sm,
   gallery2sm,
   gallery3sm,
+  faqbanner,
 
 
 };

@@ -3,16 +3,17 @@ import Script from 'next/script';
 import Home from '.';
 import Main from '../components/Main';
 import Navbar from '../components/Navbar';
+import FAQ from './FAQ';  
 
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, FAQ }) {
   return (
     <ThemeProvider
       attribute="class"
     >
       <div className="bg-meta-gray min-h-screen max-h-screen">
-        <Home />
+        <Component {...pageProps} />
 
       </div>
 
