@@ -3,6 +3,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation, UseTranslation } from 'next-i18next';
 import Image from 'next/image'
 import { Link } from 'react-scroll';
+import Head from 'next/head';
+import { useState } from 'react';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 
 import images from '../public/assets'
@@ -18,9 +21,39 @@ export async function getStaticProps({locale}) {
 
 const FAQ = () => {
 
+
+  const [nav, setNav] = useState(true);
+  const handleNav = () => {
+    setNav(!nav)
+  };
   const {t} = useTranslation();
   return (
     <div className='text-black font-sfpro bg-beyond-1'>
+    <Head>
+        <title>Beyoond - FAQ</title>
+        <meta name="description" content="Beyoond - live now" />
+      </Head>
+      <nav className="flex font-sfpro justify-between items-center nm:h-24 h-14  px-4  text-black">
+        <div className='max-w-[100px] cursor-pointer nm:max-w-[205px]'>
+        <Image onClick={() => window.open('/', '_self')} src={images.logo} width={205} height={95} />
+        </div>
+        <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
+          <li onClick={() => window.open('/FAQ', '_self')} className="p-4 cursor-pointer">FAQ</li>
+          <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('faq:navbar_button')}</button>
+        </ul>
+        <div className='cursor-pointer z-20 block nm:hidden' onClick={handleNav}>
+          {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        </div>
+        <div className={!nav ? 'fixed left-0 top-0 w-full border-r border-r-gray-700 z-10 h-full bg-beyond-1 ease-in-out duration-500' : 'fixed left-[-100%]' }>
+          <div className='mt-10 px-6 cursor-pointer'>
+          <Image onClick={() => window.open('/', '_self')} src={images.logo} width={200} height={100} />
+          </div>
+          <ul className="pt-24 px-10 uppercase font-bold">
+            <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
+            <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[12px] nm:text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('faq:navbar_button')}</button>
+          </ul>
+        </div>
+        </nav>
         <div className=''>
             <Image src={images.faqbanner} objectFit='cover' />
         </div>

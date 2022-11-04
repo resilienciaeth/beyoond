@@ -27,7 +27,7 @@ const {t} = useTranslation();
   return (
     <div className="border-b-[1px] rounded-lg bg-white border-t-[1px] nm:border-[1px] w-full py-3 mt-2 space-x-4">
     <div className="flex text-center justify-between ml-4 w-[85%]" onClick={() => toggle(i)}>
-      <h2>{t('faq:q1')}</h2>
+      <h2 className='text-[14px] nm:text-[20px]'>{t('faq:q1')}</h2>
       <span className="">{selected === i ? <img src="/assets/utilitymenu2.png" width={20} height={20} alt="arrow" /> : <img src="/assets/utilitymenu.png" width={20} height={20} />}</span>
     </div>
     <div className={selected === i ? 'content show' : 'content'}>{t('faq:a1')}</div>

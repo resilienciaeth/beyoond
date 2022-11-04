@@ -34,7 +34,6 @@ function Faq1() {
         <h1 className="text-[25px] nm:text-[40px] font-bold">{t('faq:title')}</h1>
       </div>
       <div className="nm:w-[70%] w-full mt-10 space-y-5  border-black ">
-        
           <FAQP1 />
           <FAQP2 />
           <FAQP3 />
