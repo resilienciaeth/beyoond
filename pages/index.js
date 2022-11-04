@@ -68,7 +68,6 @@ function Home() {
           </div>
           <ul className="pt-24 px-10 uppercase font-bold">
             <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
-            <li onClick={() => window.open('https://twitter.com/Beyoond_io')} className="p-4 text-[30px]">Twitter</li>
             <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[12px] nm:text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
           </ul>
         </div>
@@ -142,7 +141,7 @@ function Home() {
               </div>
               <div className="flex flex-col px-2">
                 <div className="text-[11px] nm:text-[12px] text-gray-600 ">{t('supply')}</div>
-                <p className="text-[12px]">1000 NFTs</p>
+                <p className="text-[12px]">1000</p>
               </div>
             </div>
           </div>
@@ -408,7 +407,7 @@ function Home() {
         </div>
       </div>
       {/* unique places mobile */}
-      <div className="h-auto mt-20 flex nm:hidden flex-col items-center justify-center">
+      <div className="h-auto mt-20 hidden flex-col items-center justify-center">
         <div className="flex w-[80%] flex-col items-center justify-center rounded-xl border-[1px] border-black">
           <div className="flex flex-col px-6">
             <div className="flex flex-row items-center justify-center w-full mt-2 space-x-2">
