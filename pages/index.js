@@ -50,6 +50,10 @@ function Home() {
 
   return (
     <div>
+     <Head>
+        <title>Beyoond - Home</title>
+        <meta name="description" content="Beyoond - live now" />
+      </Head>
     {/* navbar */}
     <nav className="flex font-sfpro justify-between items-center nm:h-24 h-14  px-4  text-black">
         <div className='max-w-[100px] nm:max-w-[205px]'>
@@ -74,7 +78,7 @@ function Home() {
         </nav>
     <div className="font-sfpro overflow-x-hidden text-black bg-beyond-1 ">
     <div className="main font-sfpro overflow-x-auto">
-      <video preload="true" autoPlay muted loop playsInline>
+      <video preload="true" autoPlay muted loop playsInline >
         <source src="/assets/videobanner.mp4.mp4" typeof="video/mp4" />
       </video>
       <div className=" absolute
