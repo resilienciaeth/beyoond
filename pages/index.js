@@ -58,7 +58,7 @@ function Home() {
         </div>
         <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
           <li onClick={() => window.open('/FAQ', '_self')} className="p-4">FAQ</li>
-          <button className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
+          <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
         </ul>
         <div className='cursor-pointer z-20 block nm:hidden' onClick={handleNav}>
           {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
@@ -70,7 +70,7 @@ function Home() {
           <ul className="pt-24 px-10 uppercase font-bold">
             <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
             <li onClick={() => window.open('https://twitter.com/Beyoond_io')} className="p-4 text-[30px]">Twitter</li>
-            <button className="uppercase text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
+            <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
           </ul>
         </div>
         </nav>
@@ -469,7 +469,7 @@ function Home() {
         </div>
       </div>
       {/* Footer */}
-      <div className="h-[60vh] mt-20 bg-black flex flex-col items-center justify-between">
+      <div className=" mt-20 bg-black flex flex-col items-center justify-between">
         <div className="mt-20">
           <div className="flex items-center justify-center">
             <Image src={images.logofooter} />
@@ -477,36 +477,26 @@ function Home() {
           <div className="flex flex-row mt-10 justify-between w-full space-x-16">
             <div className="">
               <div>
-                <p className="text-beyond-1 text-[8px]">Learn</p>
+                <p className="text-beyond-1 text-[8px] nm:text-[20px]">{t('Join_')}</p>
               </div>
               <div className="space-y-2 mt-4">
-                <p className="text-white text-left text-[12px] font-bold">Create</p>
-                <p className="text-white text-[12px] font-bold">Collect</p>
-                <p className="text-white text-[12px] font-bold">Sell</p>
+                <Link to='test-1' spy={true} smooth={true} offset={50} duration={500} className="text-white text-left text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('Learn')}</Link>
+                <p onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="text-white text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('navbar_button')}</p>
+                <p onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="text-white text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('button4')}</p>
               </div>
             </div>
             <div className="">
               <div>
-                <p className="text-beyond-1 text-[8px]">Company</p>
+                <p className="text-beyond-1 text-[8px] nm:text-[20px]">{t('Connect_')}</p>
               </div>
               <div className="space-y-2 mt-4">
-                <p className="text-white text-[12px] font-bold">Careers</p>
-                <p className="text-white text-[12px] font-bold">Help Center</p>
-                <p className="text-white text-[12px] font-bold">Subscribe</p>
-              </div>
-            </div>
-            <div className="">
-              <div>
-                <p className="text-beyond-1 text-[8px]">Connect</p>
-              </div>
-              <div className="space-y-2 mt-4">
-                <p className="text-white text-[12px] font-bold">Twitter</p>
-                <p className="text-white text-[12px] font-bold">Instagram</p>
-                <p className="text-white text-[12px] font-bold">Discord</p>
+                <Link onClick={() => window.open('https://www.instagram.com/beyoond_io/')} className="text-white text-left text-[12px] nm:text-[20px] font-bold cursor-pointer">Twitter</Link>
+                <p onClick={() => window.open('https://www.instagram.com/beyoond_io/')}  className="text-white text-[12px] nm:text-[20px] font-bold cursor-pointer">Instagram</p>
+                <p onClick={() => window.open('https://discord.gg/k37Z8AvCFk')}  className="text-white text-[12px] nm:text-[20px] font-bold cursor-pointer">Discord</p>
               </div>
             </div>
           </div>
-          <div className="flex text-white mt-20 text-[8px] text-center items-center justify-center">
+          <div className="flex text-white mt-20 mb-20 text-[8px] nm:text-[20px] text-center items-center justify-center">
             <p>Powered by Naked Meta & Rojkind Arquitectos.</p>
           </div>
         </div>
