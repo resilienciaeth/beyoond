@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps, FAQ }) {
     <ThemeProvider
       attribute="class"
     >
-      <div className=" min-h-screen max-h-screen">
+      <div className="bg-meta-gray min-h-screen max-h-screen">
         <Component {...pageProps} />
       </div>
       <Script src="https://kit.fontawesome.com/4e0b8e54bb.js" crossOrigin="anonymous" />
