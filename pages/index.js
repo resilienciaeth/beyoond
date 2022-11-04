@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
 import Head from 'next/head';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-scroll';
 import 'aos/dist/aos.css';
 import { useRouter } from 'next/router';
 import Aos from 'aos';
@@ -16,6 +17,7 @@ import Faq from '../components/Faq';
 import Main from '../components/Main';
 import Gallery from '../components/Gallery';
 import Card from '../components/Card';
+import Faqfinal from '../components/faqfinal';
 
 
 export async function getStaticProps({locale}) {
@@ -30,6 +32,15 @@ function Home() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
+
+  const arc = useRef(null);
+
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth',
+    });
+  };
 
   const [nav, setNav] = useState(true);
   const handleNav = () => {
@@ -47,8 +58,7 @@ function Home() {
         </div>
         <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
           <li onClick={() => window.open('/FAQ', '_self')} className="p-4">FAQ</li>
-          <li className="p-4">Twitter</li>
-          <button className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
+          <button className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
         </ul>
         <div className='cursor-pointer z-20 block nm:hidden' onClick={handleNav}>
           {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
@@ -58,9 +68,8 @@ function Home() {
           <Image src={images.logo} width={200} height={100} />
           </div>
           <ul className="pt-24 px-10 uppercase font-bold">
-            <li onClick='/FAQ' className="p-4 text-[30px]">FAQ</li>
+            <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
             <li onClick={() => window.open('https://twitter.com/Beyoond_io')} className="p-4 text-[30px]">Twitter</li>
-            <li className="p-4 text-[30px]">Resources</li>
             <button className="uppercase text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">Join Pre-List</button>
           </ul>
         </div>
@@ -81,13 +90,13 @@ function Home() {
           {' '}
           {t('common:title_3')}
         </h1>
-        <p className="font-bold underline ml-10 cursor-pointer text-[20px] hover:text-black">
+        <Link to='test-1' spy={true} smooth={true} offset={50} duration={500} className="font-bold underline ml-10 cursor-pointer text-[20px] hover:text-black">
         {t('common:button1')}
-        </p>
+        </Link>
       </div>
     </div>
       {/* Arquitectura */}
-        <div className="flex bg-green nm:h-[60vh] bg-contain bg-center nm:bg-bottom bg-no-repeat nm: items-center nm:justify-start nm:space-x-10 flex-col nm:flex-row h-full nm:px-[10rem]">
+        <div id='test-1'  className="flex bg-green nm:h-[60vh] bg-contain bg-center nm:bg-bottom bg-no-repeat nm: items-center nm:justify-start nm:space-x-10 flex-col nm:flex-row h-full nm:px-[10rem]">
           <div className="flex flex-col justify-center items-center nm:px-10 nm:justify-center nm:items-start mt-10 nm:w-[50%]">
             <h1 className="text-[#303030] font-sfpro font-bold text-[24px] nm:text-[30px] text-center nm:leading-[32px] nm:text-left">{t('section2_title')}</h1>
             <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">{t('section2_p1')}
@@ -103,7 +112,7 @@ function Home() {
             <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">{t('section2_p3')}{' '}
               <span className="font-bold">{t('section2_p3bold')}</span>
               {' '}  {t('section2_p3cont')} </p>
-            <button className="mt-6 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black py-2 px-10 text-[12px]">{t('button2')}</button>
+            <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="mt-6 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black hover:bg-black hover:text-white hover:border-white py-2 px-10 text-[12px]">{t('button2')}</button>
           </div>
           <div className="flex nm:hidden flex-col items-center justify-center mt-[2rem] nm:w-[50%]">
             <Image src={images.section2mb} objectFit="contain" className='rounded-2xl' />
@@ -124,7 +133,7 @@ function Home() {
                 <Image src={images.creator} />
               </div>
               <div className="flex flex-col px-2">
-                <p className="text-[11px] text-gray-600 ">{t('common:creator')}</p>
+                <p className="text-[11px] text-gray-600 ">{t('creator')}</p>
                 <p className="text-[12px]">Michel Rojkind</p>
               </div>
             </div>
@@ -133,35 +142,26 @@ function Home() {
                 <Image src={images.creator2} />
               </div>
               <div className="flex flex-col px-2">
-                <div className="text-[11px] nm:text-[12px] text-gray-600 ">{t('common:supply')}</div>
+                <div className="text-[11px] nm:text-[12px] text-gray-600 ">{t('supply')}</div>
                 <p className="text-[12px]">1000 NFTs</p>
               </div>
             </div>
           </div>
           <div className=" border-2 border-[#CBCBCB] mt-4 nm:mt-10 w-[80%] nm:w-[40%] nm:min-w-[300px] rounded-3xl flex flex-col items-center">
-            <p className="text-[10px] nm:text-[15px] mt-4 nm:mt-10">{t('common:price')}</p>
+            <p className="text-[10px] nm:text-[15px] mt-4 nm:mt-10">{t('price')}</p>
             <p className="text-[35px] nm:text-[50px] font-bold">$100 USD</p>
             <div className="flex flex-col mt-4 mb-6 nm:mb-10">
-              <p className="text-[8px] text-center">{t('common:presale')}</p>
+              <p className="text-[8px] text-center">{t('presale')}</p>
               <div className="flex flex-row items-center justify-between space-x-16 mt-4 nm:mt-10">
-                <div className="text-center">
-                  <h1 className="text-[25px] nm:text-[30px] font-bold">15</h1>
-                  <p className="text-[10px] nm:text-[15px] text-gray-600">Days</p>
-                </div>
-                <div className="text-center">
-                  <h1 className="text-[25px] nm:text-[30px] font-bold">15</h1>
-                  <p className="text-[10px] nm:text-[15px] text-gray-600">Hours</p>
-                </div>
-                <div className="text-center">
-                  <h1 className="text-[25px] nm:text-[30px] font-bold">15</h1>
-                  <p className="text-[10px] nm:text-[15px] text-gray-600">Minutes</p>
-                </div>
+              <h1 className='text-[30px] font-bold'>
+                COMING SOON
+              </h1>
               </div>
             </div>
           </div>
           <div className="mt-5 w-[80%] nm:w-[40%] nm:min-w-[300px] flex flex-col space-y-4">
-            <button className="bg-[#2373EA] hover:bg-beyond-1 hover:border-2 hover:border-[#CBCBCB] hover:text-gray-600 text-white text-bold text-[12px] py-2 rounded-3xl">{t('common:button3')}</button>
-            <button className="border-2 border-[#CBCBCB] text-gray-600 bg-beyond-1 hover:bg-[#2373EA] hover:text-white text-bold text-[12px] py-2 rounded-3xl">{t('common:button4')}</button>
+            <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="bg-[#2373EA] hover:bg-beyond-1 hover:border-2 hover:border-[#CBCBCB] hover:text-gray-600 text-white text-bold text-[12px] py-2 rounded-3xl">{t('button3')}</button>
+            <button onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="border-2 border-[#CBCBCB] text-gray-600 bg-beyond-1 hover:bg-[#2373EA] hover:text-white text-bold text-[12px] py-2 rounded-3xl">{t('button4')}</button>
           </div>
         </div>
         {/*gallery */}
@@ -169,7 +169,7 @@ function Home() {
       </div>
       {/* Utilidades mobile */}
       <div className="nm:hidden mt-10 flex flex-col items-center justify-center sm:justify-start w-full">
-        <Faq />
+      <Faqfinal />
       </div>
       {/* Metaverse Compatibility */}
       <div className="mt-10 nm:hidden">
@@ -178,19 +178,19 @@ function Home() {
         </div>
         <div className="flex w-full flex-col justify-center ">
           <div className="flex flex-col mt-10">
-            <h1 className="text-center">Metaverse Compatibility</h1>
+            <h1 className="text-center">{t('Compatibility')}</h1>
             <div className="flex flex-row items-center justify-center space-x-10 mt-5 ">
               <div className="flex flex-col">
-                <p className="text-[10px] underline text-center ">Unity</p>
-                <p className="text-[10px] underline text-center ">Decentraland</p>
+              <p onClick={() => window.open('https://www.spatial.io/')} className="text-[10px] underline text-center ">Spatial.io</p>
+                <p onClick={() => window.open('https://decentraland.org/')} className="text-[10px] underline text-center ">Decentraland</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-[10px] underline text-center ">VR Chat</p>
-                <p className="text-[10px] underline text-center ">Unreal Engine 5</p>
+                <p onClick={() => window.open('https://hello.vrchat.com/')} className="text-[10px] underline text-center ">VR Chat</p>
+                <p onClick={() => window.open('https://www.unrealengine.com/en-US/unreal-engine-5')} className="text-[10px] underline text-center ">Unreal Engine 5</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-[10px] underline text-center ">Spatial.io</p>
-                <p className="text-[10px] underline text-center ">Nvidia Omniverse</p>
+              <p onClick={() => window.open('https://unity.com/')} className="text-[10px] underline text-center ">Unity</p>
+                <p onClick={() => window.open('https://www.nvidia.com/en-us/omniverse/')} className="text-[10px] underline text-center ">Nvidia Omniverse</p>
               </div>
             </div>
           </div>
@@ -203,29 +203,19 @@ function Home() {
                 <div className="space-y-2 w-[80%] mt-2">
                   <div className="bg-[#D9D9D9] py-1">
                     <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                      Highest Fidelity | 378MB
-                    </h1>
-                  </div>
-                  <div className="bg-[#D9D9D9] py-1">
-                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                      Highest Fidelity | 378MB
+                      {t('File_size')} | 2.5MB
                     </h1>
                   </div>
                 </div>
               </div>
               <div className="flex flex-col items-start w-[50%] ml-5">
                 <div className="flex items-start">
-                  <h1 className="text-[14px] font-bold text-left">FBX</h1>
+                  <h1 className="text-[14px] font-bold text-left">GLB</h1>
                 </div>
                 <div className="space-y-2 w-[80%] mt-2">
                   <div className="bg-[#D9D9D9] py-1">
                     <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                      Highest Fidelity | 378MB
-                    </h1>
-                  </div>
-                  <div className="bg-[#D9D9D9] py-1">
-                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                      Highest Fidelity | 378MB
+                    {t('File_size')} | 30MB
                     </h1>
                   </div>
                 </div>
@@ -239,29 +229,7 @@ function Home() {
                 <div className="space-y-2 w-[80%] mt-2">
                   <div className="bg-[#D9D9D9] py-1">
                     <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                      Highest Fidelity | 378MB
-                    </h1>
-                  </div>
-                  <div className="bg-[#D9D9D9] py-1">
-                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                      Highest Fidelity | 378MB
-                    </h1>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col items-start w-[50%] ml-5">
-                <div className="flex items-start">
-                  <h1 className="text-[14px] font-bold text-left">VOX</h1>
-                </div>
-                <div className="space-y-2 w-[80%] mt-2">
-                  <div className="bg-[#D9D9D9] py-1">
-                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                      Highest Fidelity | 378MB
-                    </h1>
-                  </div>
-                  <div className="bg-[#D9D9D9] py-1">
-                    <h1 className="text-[#5A5A5A] text-center text-[8px]">
-                      Highest Fidelity | 378MB
+                    {t('File_size')} | 4MB
                     </h1>
                   </div>
                 </div>
@@ -281,24 +249,25 @@ function Home() {
               </div>
               <div className="">
                 <div className="space-y-6">
-                  <p className="text-[15px]">Metaverse Compatibility</p>
+                  <p className="text-[15px]">{t('Compatibility')}</p>
                   <div className="flex mt-6 flex-row justify-between text-[17px] underline font-bold">
                     <div className="flex  flex-col">
-                      <p>Decentraland</p>
-                      <p>Spatial.io</p>
+                      <p onClick={() => window.open('https://www.spatial.io/')}>Spatial.io</p>
+                      <p onClick={() => window.open('https://decentraland.org/')}>Decentraland</p>
+                      
                     </div>
                     <div className="flex flex-col">
-                      <p>VR Chat</p>
-                      <p>Unity</p>
+                      <p onClick={() => window.open('https://hello.vrchat.com/')}>VR Chat</p>
+                      <p onClick={() => window.open('https://unity.com/')}>Unity</p>
                     </div>
                     <div className="flex flex-col">
-                      <p>Unreal Engine 5</p>
-                      <p>Nvidia Omniverse</p>
+                      <p onClick={() => window.open('https://www.unrealengine.com/en-US/unreal-engine-5')}>Unreal Engine 5</p>
+                      <p onClick={() => window.open('https://www.nvidia.com/en-us/omniverse/')}>Nvidia Omniverse</p>
                     </div>
                   </div>
                   <div>
                     <p>
-                      Files Formats Included
+                    {t('File_format')}
                     </p>
                     <div className="flex flex-row space-x-20 w-full">
                       <div className="mt-10 w-[25%] space-y-4">
@@ -306,12 +275,7 @@ function Home() {
                         <div className=" space-y-2 flex flex-col">
                           <div className="bg-[#D9D9D9] py-1">
                             <h1 className="text-[#5A5A5A] text-center text-[12px]">
-                              Highest Fidelity | 378MB
-                            </h1>
-                          </div>
-                          <div className="bg-[#D9D9D9] py-1">
-                            <h1 className="text-[#5A5A5A] text-center text-[12px]">
-                              Highest Fidelity | 378MB
+                            {t('File_size')} | 2.5MB
                             </h1>
                           </div>
                         </div>
@@ -321,36 +285,21 @@ function Home() {
                         <div className=" space-y-2">
                           <div className="bg-[#D9D9D9] py-1">
                             <h1 className="text-[#5A5A5A] text-center text-[12px]">
-                              Highest Fidelity | 378MB
-                            </h1>
-                          </div>
-                          <div className="bg-[#D9D9D9] py-1">
-                            <h1 className="text-[#5A5A5A] text-center text-[12px]">
-                              Lowest Fidelity | 37MB
+                            {t('File_size')} | 30MB
                             </h1>
                           </div>
                         </div>
                       </div>
-                      <div className="mt-10 space-y-4 w-[25%]">
-                        <h1 className="font-bold text-[17px]">VOX</h1>
-                        <div className=" space-y-2">
-                          <div className="bg-[#D9D9D9] py-1">
-                            <h1 className="text-[#5A5A5A] text-center text-[12px]">
-                              Highest Fidelity | 378MB
-                            </h1>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-10 mb-10 space-y-4 w-[25%]">
+                      <div className="mt-10 mb-14 space-y-4 w-[25%]">
                       <h1 className="font-bold text-[17px]">USD</h1>
                       <div className=" space-y-2 mb-10">
                         <div className="bg-[#D9D9D9] py-1">
                           <h1 className="text-[#5A5A5A] text-center text-[12px]">
-                            Highest Fidelity | 378MB
+                          {t('File_size')} | 4MB
                           </h1>
                         </div>
                       </div>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -358,95 +307,94 @@ function Home() {
             </div>
           </div>
           {/* Utilities desktop */}
-          <Faq />
+          <Faqfinal />
         </div>
       </div>
       {/* diseña tu interior */}
-      <div className="h-[600px] nm:h-screen bg-green2 flex flex-col items-center justify-center">
+      <div className="h-[500px] nm:h-screen bg-green2 flex flex-col items-center justify-center">
         <div className="flex flex-col items-center">
           <div className="flex items-center justify-center">
-            Explora el espacio
+          {t('design_p1')}
           </div>
           <div className="md:text-[80px] text-[25px] uppercase">
-            Contempla tu interior.
+          {t('design_t1')}
           </div>
           <div>
-            <button className="md:mt-6 border-[1px] rounded-[0.3rem] bg-white text-black md:py-2 py-1 md:px-10 px-6 text-[12px]">Descubre AXK4N</button>
+            <button onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')}  className="md:mt-6 border-[1px] rounded-[0.3rem] bg-white text-black md:py-2 py-1 md:px-10 hover:bg-black hover:text-white hover:border-white px-6 text-[12px]">{t('design_button5')}</button>
           </div>
         </div>
       </div>
       {/* conoce el team */}
       <div className="h-auto mt-10  nm:w-full">
         <div className="nm:flex nm:flex-col justify-center nm:justify-center items-center">
-          <p className="text-center text-[10px] nm:text-[18px]">About The Creators</p>
-          <h1 className="text-[40px] leading-none text-center nm:text-[90px]">Conoce al<br />Equipo Creativo</h1>
-          <p className="text-[12px] nm:w-[70%] mt-2 nm:text-[15px] text-center px-10 nm:px-[25rem]">
-            Michel Rojkind junto a su equipo de Rojkind Arquitectos une fuerzas con Naked Meta para lanzar Beyoond, un proyecto que quiere ayudar a miles de arquitectos alrededor del mundo a descubrir el apasionante mundo de diseñar espacios que desafian las leyes de la fisica. 
+          <p className="text-center text-[10px] nm:text-[18px]">{t('team_p1')}</p>
+          <h1 className="text-[40px] leading-none text-center nm:text-[90px]">{t('team_t1')}<br />{t('team_t2')}</h1>
+          <p className="text-[12px] nm:w-[90%] mt-2 nm:text-[15px] text-center px-10 nm:px-[25rem]">{t('team_p2')}
           </p>
           {/*meet the team desktop */}
           <div className="hidden nm:flex flex-row nm:space-x-12 space-x-0 px-8  mt-[5rem] ">
-            <div className='min-w-[180px]'>
-              <Image src={images.rojkind} />
+            <div className='min-w-[180px] cursor-pointer'>
+              <Image onClick={() => window.open('https://www.instagram.com/rojkind/')}  src={images.rojkind} />
             </div>
-            <div className='min-w-[180px]'>
-              <Image src={images.diego} />
+            <div className='min-w-[180px] cursor-pointer'>
+              <Image onClick={() => window.open('https://instagram.com/diegolezama/')} src={images.diego} />
             </div>
-            <div className='min-w-[180px]'>
-              <Image src={images.nico} />
+            <div className='min-w-[180px] cursor-pointer'>
+              <Image onClick={() => window.open('https://instagram.com/nickinthematrix/')} src={images.nico} />
             </div>
-            <div className='min-w-[180px]'>
-              <Image src={images.dani} />
+            <div className='min-w-[180px] cursor-pointer'>
+              <Image onClick={() => window.open('https://www.instagram.com/danielhuertasl/')} src={images.dani} />
             </div>
-            <div className='min-w-[180px]'>
-              <Image src={images.mati} />
+            <div className='min-w-[180px] cursor-pointer'>
+              <Image onClick={() => window.open('https://www.instagram.com/sabelmatias/')} src={images.mati} />
             </div>
           </div>
           <div className="hidden nm:flex flex-row space-x-12 mt-[5rem]">
-            <div>
-              <Image src={images.mike} />
+            <div className='cursor-pointer'>
+              <Image onClick={() => window.open('https://www.instagram.com/mikedecenzo/')} src={images.mike} />
             </div>
-            <div>
-              <Image src={images.tomi} />
+            <div className='cursor-pointer'>
+              <Image onClick={() => window.open('https://www.instagram.com/tomicmar_/')} src={images.tomi} />
             </div>
-            <div>
-              <Image src={images.jose} />
+            <div className='cursor-pointer'>
+              <Image onClick={() => window.open('https://www.instagram.com/kamuleon/')} src={images.jose} />
             </div>
-            <div>
-              <Image src={images.kevin} />
+            <div className='cursor-pointer'>
+              <Image onClick={() => window.open('https://www.instagram.com//')} src={images.kevin} />
             </div>
           </div>
           {/*meet the team mobile */}
           <div className='flex px-4 flex-col nm:hidden overflow-x-hidden space-y-6'>
           <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
             <div>
-              <Image src={images.rojkind} />
+              <Image onClick={() => window.open('https://www.instagram.com/rojkind/')} src={images.rojkind} />
               </div>
               <div>
-              <Image src={images.diego} />
+              <Image onClick={() => window.open('https://instagram.com/diegolezama/')} src={images.diego} />
               </div>
             </div>
             <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
             <div>
-              <Image src={images.nico} />
+              <Image onClick={() => window.open('https://instagram.com/nickinthematrix/')} src={images.nico} />
               </div>
               <div>
-              <Image src={images.dani} />
+              <Image onClick={() => window.open('https://www.instagram.com/danielhuertasl/')} src={images.dani} />
               </div>
             </div>
             <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
             <div>
-              <Image src={images.mati} />
+              <Image onClick={() => window.open('https://www.instagram.com/sabelmatias/')} src={images.mati} />
               </div>
               <div>
-              <Image src={images.mike} />
+              <Image onClick={() => window.open('https://www.instagram.com/mikedecenzo/')} src={images.mike} />
               </div>
             </div>
             <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
             <div>
-              <Image src={images.tomi} />
+              <Image onClick={() => window.open('https://www.instagram.com/tomicmar_/')} src={images.tomi} />
               </div>
               <div>
-              <Image src={images.jose} />
+              <Image onClick={() => window.open('https://www.instagram.com/kamuleon/')} src={images.jose} />
               </div>
             </div>
             <div className='min-w-[160px] space-x-4 flex mt-8 flex-row'>
@@ -458,7 +406,6 @@ function Home() {
             </div>
           </div>
         </div>
-
       </div>
       {/* unique places mobile */}
       <div className="h-auto mt-20 flex nm:hidden flex-col items-center justify-center">
@@ -467,7 +414,7 @@ function Home() {
             <div className="flex flex-row items-center justify-center w-full mt-2 space-x-2">
               <div className="">
                 <p className="text-[26px] text-left">
-                  Unique
+                {t('final_w1')}
                 </p>
               </div>
               <div className="">
@@ -475,15 +422,15 @@ function Home() {
               </div>
             </div>
             <div className="flex items-center flex-col justify-center">
-              <p className="text-[100px] leading-[6rem]">places</p>
+              <p className="text-[100px] leading-[6rem]">{t('final_w2')}</p>
               <div className="mt-4 px-1 ">
                 <Image src={images.meditar} />
               </div>
-              <p className="text-[55px]">to meditate</p>
+              <p className="text-[55px]">{t('final_w3')}</p>
               <div className="mt-1 px-1">
                 <Image src={images.consciente} />
               </div>
-              <p className="text-[55px]">consciously</p>
+              <p className="text-[55px]">{t('final_w4')}</p>
             </div>
           </div>
         </div>
@@ -495,27 +442,27 @@ function Home() {
             <div className="flex flex-row items-center justify-center w-full mt-2 space-x-10">
               <div>
                 <p className="text-[100px] text-left">
-                  Ambientes
+                {t('final_w1')}
                 </p>
               </div>
               <div>
                 <Image src={images.unique} objectFit="contain" />
               </div>
-              <p className="text-[100px] leading-[6rem]">únicos</p>
+              <p className="text-[100px] leading-[6rem]">{t('final_w2')}</p>
             </div>
             <div className="flex items-center flex-col justify-center">
               <div className="flex flex-row items-center  space-x-8">
-                <p className="text-[100px]">para</p>
+                <p className="text-[100px]">{t('final_w5mb')}</p>
                 <div className="mt-4 px-1 ">
                   <Image src={images.meditate} />
                 </div>
-                <p className="text-[100px]">meditar</p>
+                <p className="text-[100px]">{t('final_w6mb')}</p>
               </div>
               <div className="flex flex-row items-center  space-x-8">
                 <div className="mt-1 px-1">
                   <Image src={images.consciosuly} />
                 </div>
-                <p className="text-[100px]">conscientemente</p>
+                <p className="text-[100px]">{t('final_w7mb')}</p>
               </div>
             </div>
           </div>

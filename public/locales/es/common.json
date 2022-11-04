@@ -1,4 +1,5 @@
  {
+        "navbar_button": "Reserva tu espacio",
         "title_1": "El espacio virtual",
         "title_2": "que une amantes",
         "title_3": "de la aquitectura",
@@ -18,7 +19,40 @@
         "price": "Precio de lanzamiento",
         "presale": "La venta publica empieza:",
         "button3": "Reserva tu espacio",
-        "button4": "Ver espacio en 3D"
+        "button4": "Ver espacio en 3D",
+        "design_p1": "Explora el espacio",
+        "design_t1": "Contempla tu interior.",
+        "design_button5": "Descubre AXK4N",
+        "team_p1": "Sobre los creadores",
+        "team_t1": "Conoce al",
+        "team_t2": "Equipo Creativo",
+        "team_p2": "Michel Rojkind junto a su equipo de Rojkind Arquitectos une fuerzas con Naked Meta para lanzar Beyoond, un proyecto que quiere ayudar a miles de arquitectos alrededor del mundo a descubrir el apasionante mundo de diseñar espacios que desafian las leyes de la fisica.",
+        "final_w1": "Lugares",
+        "final_w2": "únicos",
+        "final_w3": "para meditar",
+        "final_w4": "conscientemente",
+        "final_w5mb": "para",
+        "final_w6mb": "meditar",
+        "final_w7mb": "conscientemente",
+        "utilities_title": "Conoce las utilidades",
+        "q1": "01. Tu espacio privado en el Metaverso.",
+        "a1": "Obtendrás un espacio coleccionable y utilizable en el metaverso, es un sitio virtual en el que podrás reunirte con quien lo desees. Allí es donde Rojkind se reunirá con la comunidad.",
+        "q2": "02.Obtén tu colecionable digital.",
+        "a2": "Tu espacio virtual es un colecionable digital. Al solo haber 1000, los miembros tendrán la oportunidad de revenderlo en el futuro si así lo desean.",
+        "q3": "03. Acceso a una comunidad privada.",
+        "a3": "Serás parte de una comunidad de amantes de la arquitectura. Conocerás un entorno ideal para compartir información y conocimiento. Podrás hacer networking con otros amantes de la arquitectura y con Michel Rojkind.",
+        "q4": "04. Eventos virtuales.",
+        "a4": "Acceso a un evento mensual en vivo dentro del Metaverso junto a Michel Rojkind y toda la comunidad.",
+        "q5": "05. Modifica tu espacio y concursa.",
+        "a5": "Cada comprador tendrá la posibilidad de modificar su espacio y participar de un concurso creativo, el ganador lo podrá lanzar como coleccionable a través de Beyoond.",
+        "q6": "06. Acceso Prioritario.",
+        "a6": "Cada miembro tendrá acceso prioritario a todos los futuros eventos y lanzamientos de Beyoond.",
+        "Compatibility": "Compatibilidades",
+        "File_size": "Tamaño",
+        "File_format": "Formatos incluidos"
+
+
+
 
 
 
