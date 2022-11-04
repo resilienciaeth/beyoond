@@ -33,17 +33,17 @@ const FAQ = () => {
           <div className="flex flex-row mt-10 justify-between w-full space-x-16">
             <div className="">
               <div>
-                <p className="text-beyond-1 text-[8px] nm:text-[20px]">{t('Join_')}</p>
+                <p className="text-beyond-1 text-[8px] nm:text-[20px]">{t('faq:Join_')}</p>
               </div>
               <div className="space-y-2 mt-4">
-                <Link to='test-1' spy={true} smooth={true} offset={50} duration={500} className="text-white hover:text-gray-600 text-left text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('Learn')}</Link>
-                <p onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="text-white hover:text-gray-600 text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('navbar_button')}</p>
-                <p onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="text-white text-[12px] nm:text-[20px] font-bold hover:text-gray-600 cursor-pointer">{t('button4')}</p>
+                <Link to='test-1' spy={true} smooth={true} offset={50} duration={500} className="text-white hover:text-gray-600 text-left text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('faq:Learn')}</Link>
+                <p onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="text-white hover:text-gray-600 text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('faq:navbar_button')}</p>
+                <p onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="text-white text-[12px] nm:text-[20px] font-bold hover:text-gray-600 cursor-pointer">{t('faq:button4')}</p>
               </div>
             </div>
             <div className="">
               <div>
-                <p className="text-beyond-1 text-[8px] nm:text-[20px]">{t('Connect_')}</p>
+                <p className="text-beyond-1 text-[8px] nm:text-[20px]">{t('faq:Connect_')}</p>
               </div>
               <div className="space-y-2 mt-4">
                 <Link onClick={() => window.open('https://www.instagram.com/beyoond_io/')} className="text-white text-left text-[12px] nm:text-[20px] font-bold hover:text-gray-600 cursor-pointer">Twitter</Link>
