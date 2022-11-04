@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'next-themes';
 import Script from 'next/script';
+import { appWithTranslation } from 'next-i18next';  
 import Home from '.';
 import Main from '../components/Main';
 import Navbar from '../components/Navbar';
@@ -14,12 +15,9 @@ function MyApp({ Component, pageProps, FAQ }) {
     >
       <div className="bg-meta-gray min-h-screen max-h-screen">
         <Component {...pageProps} />
-
       </div>
-
       <Script src="https://kit.fontawesome.com/4e0b8e54bb.js" crossOrigin="anonymous" />
     </ThemeProvider>
-
   );
 }
-export default MyApp;
+export default appWithTranslation(MyApp);

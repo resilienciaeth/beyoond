@@ -2,14 +2,29 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import images from '../public/assets';
 import 'aos/dist/aos.css';
+import { useRouter } from 'next/router';
 import Aos from 'aos';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import { useTranslation, UseTranslation } from 'next-i18next';
+
+import images from '../public/assets';
 import Faq from '../components/Faq';
 import Main from '../components/Main';
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Gallery from '../components/Gallery';
 import Card from '../components/Card';
+
+
+export async function getStaticProps({locale}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common']))
+    }
+  }
+}
 
 function Home() {
   useEffect(() => {
@@ -20,6 +35,8 @@ function Home() {
   const handleNav = () => {
     setNav(!nav)
   }
+
+  const {t} = useTranslation();
 
   return (
     <div>
@@ -49,26 +66,44 @@ function Home() {
         </div>
         </nav>
     <div className="font-sfpro overflow-x-hidden text-black bg-beyond-1 ">
-      <Main />
+    <div className="main font-sfpro overflow-x-auto">
+      <video preload="true" autoPlay muted loop playsInline>
+        <source src="/assets/videobanner.mp4.mp4" typeof="video/mp4" />
+      </video>
+      <div className=" absolute
+        h-full top-0 flex flex-col justify-center mt-[13rem] nm:mt-[12rem] nm:ml-[3rem] nm:justify-center items-start text-white">
+        <h1 className="font-bold  ml-10 text-[32px] nm:text-[6vh]">
+        {t('common:title_1')}
+          {' '}
+          <br />
+          {t('common:title_2')}
+          <br />
+          {' '}
+          {t('common:title_3')}
+        </h1>
+        <p className="font-bold underline ml-10 cursor-pointer text-[20px] hover:text-black">
+        {t('common:button1')}
+        </p>
+      </div>
+    </div>
       {/* Arquitectura */}
         <div className="flex bg-green nm:h-[60vh] bg-contain bg-center nm:bg-bottom bg-no-repeat nm: items-center nm:justify-start nm:space-x-10 flex-col nm:flex-row h-full nm:px-[10rem]">
           <div className="flex flex-col justify-center items-center nm:px-10 nm:justify-center nm:items-start mt-10 nm:w-[50%]">
-            <h1 className="text-[#303030] font-sfpro font-bold text-[24px] nm:text-[24px] text-center nm:leading-[32px] nm:text-left">Una propuesta arquitectónica, tecnológica y colectiva.</h1>
-            <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">
-            Beyoond será el punto de partida para el nacimiento de una {' '}
-              <span className="font-bold">comunidad de amantes</span>
-              {' '}  de la arquitectura que experimentarán aprendizaje en tiempo real.
-              
+            <h1 className="text-[#303030] font-sfpro font-bold text-[24px] nm:text-[30px] text-center nm:leading-[32px] nm:text-left">{t('section2_title')}</h1>
+            <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">{t('section2_p1')}
+            {' '}
+              <span className="font-bold">{t('section2_p1bold')}</span>
+              {' '}  {t('section2_p1cont')}
             </p>
             <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">
             {' '}
-              <span className="font-bold">Cada Comprador</span>
-              {' '} recibirá un espacio diseñado por Rojkind Arquitectos que invita a transitar una experiencia emocional. Estas construcciones inspiradas en estructuras antiguas funcionan como un portal de escape hacia otras realidades y temporalidades.
+              <span className="font-bold">{t('section2_p2bold')}</span>
+              {' '} {t('section2_p2')}
             </p>
-            <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">En este interesante ambiente {' '}
-              <span className="font-bold">Michel Rojkind</span>
-              {' '}  se encontrará con la comunidad para reflexionar sobre el ser y la arquitectura del futuro. </p>
-            <button className="mt-6 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black py-2 px-10 text-[12px]">Discover</button>
+            <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">{t('section2_p3')}{' '}
+              <span className="font-bold">{t('section2_p3bold')}</span>
+              {' '}  {t('section2_p3cont')} </p>
+            <button className="mt-6 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black py-2 px-10 text-[12px]">{t('button2')}</button>
           </div>
           <div className="flex nm:hidden flex-col items-center justify-center mt-[2rem] nm:w-[50%]">
             <Image src={images.section2mb} objectFit="contain" className='rounded-2xl' />
@@ -79,10 +114,9 @@ function Home() {
         </div>
       {/* Tarjeta */}
       <div className="w-full flex mt-10 flex-col nm:flex-row-reverse">
-    
         <div className="nm:h-auto nm:w-[40%] flex items-center nm:items-start nm:justify-center flex-col">
           <div className="font-bold text-center text-[35px] nm:text-[70px] nm:ml-6 text-black">
-            <h1 className='text-center'>AXK4N.</h1>
+            <h1 className='text-center'>AXK4N</h1>
           </div>
           <div className="flex nm:ml-4 flex-row mt-4 space-x-4">
             <div className="flex flex-row">
@@ -90,7 +124,7 @@ function Home() {
                 <Image src={images.creator} />
               </div>
               <div className="flex flex-col px-2">
-                <p className="text-[11px] text-gray-600 ">Creator</p>
+                <p className="text-[11px] text-gray-600 ">{t('common:creator')}</p>
                 <p className="text-[12px]">Michel Rojkind</p>
               </div>
             </div>
@@ -99,16 +133,16 @@ function Home() {
                 <Image src={images.creator2} />
               </div>
               <div className="flex flex-col px-2">
-                <div className="text-[11px] nm:text-[12px] text-gray-600 ">Limited Supply</div>
+                <div className="text-[11px] nm:text-[12px] text-gray-600 ">{t('common:supply')}</div>
                 <p className="text-[12px]">1000 NFTs</p>
               </div>
             </div>
           </div>
           <div className=" border-2 border-[#CBCBCB] mt-4 nm:mt-10 w-[80%] nm:w-[40%] nm:min-w-[300px] rounded-3xl flex flex-col items-center">
-            <p className="text-[10px] nm:text-[15px] mt-4 nm:mt-10">Precio de lanzamiento</p>
+            <p className="text-[10px] nm:text-[15px] mt-4 nm:mt-10">{t('common:price')}</p>
             <p className="text-[35px] nm:text-[50px] font-bold">$100 USD</p>
             <div className="flex flex-col mt-4 mb-6 nm:mb-10">
-              <p className="text-[8px] text-center">Public Sale Starts on:</p>
+              <p className="text-[8px] text-center">{t('common:presale')}</p>
               <div className="flex flex-row items-center justify-between space-x-16 mt-4 nm:mt-10">
                 <div className="text-center">
                   <h1 className="text-[25px] nm:text-[30px] font-bold">15</h1>
@@ -126,8 +160,8 @@ function Home() {
             </div>
           </div>
           <div className="mt-5 w-[80%] nm:w-[40%] nm:min-w-[300px] flex flex-col space-y-4">
-            <button className="bg-[#2373EA] hover:bg-beyond-1 hover:border-2 hover:border-[#CBCBCB] hover:text-gray-600 text-white text-bold text-[12px] py-2 rounded-3xl">Enter the Pre-Sale</button>
-            <button className="border-2 border-[#CBCBCB] text-gray-600 bg-beyond-1 hover:bg-[#2373EA] hover:text-white text-bold text-[12px] py-2 rounded-3xl">View Space in 3D</button>
+            <button className="bg-[#2373EA] hover:bg-beyond-1 hover:border-2 hover:border-[#CBCBCB] hover:text-gray-600 text-white text-bold text-[12px] py-2 rounded-3xl">{t('common:button3')}</button>
+            <button className="border-2 border-[#CBCBCB] text-gray-600 bg-beyond-1 hover:bg-[#2373EA] hover:text-white text-bold text-[12px] py-2 rounded-3xl">{t('common:button4')}</button>
           </div>
         </div>
         {/*gallery */}
@@ -534,4 +568,4 @@ function Home() {
     </div>
   );
 }
-export default Home;
+export default (Home);

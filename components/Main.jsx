@@ -1,6 +1,21 @@
-import React from 'react';
+
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import { useTranslation, UseTranslation } from 'next-i18next';
+
+export async function getStaticProps({locale}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common']))
+    }
+  }
+}
 
 function Main() {
+  const {t} = useTranslation();
   return (
     <div className="main font-sfpro overflow-x-auto">
       <video preload="true" autoPlay muted loop playsInline>
@@ -9,7 +24,7 @@ function Main() {
       <div className=" absolute
         h-full top-0 flex flex-col justify-center mt-[13rem] nm:mt-[12rem] nm:ml-[3rem] nm:justify-center items-start text-white">
         <h1 className="font-bold  ml-10 text-[32px] nm:text-[6vh]">
-        El espacio virtual
+        {t('title')}
           {' '}
           <br />
           que une amantes
@@ -25,17 +40,4 @@ function Main() {
   );
 }
 
-export default Main;
-
-{ /*
-<div className="main">
-        <div className="content">
-          <h1 className="text-white text-[4vh] nm:text-[5vh]  nm:mt-0 mr-10 font-sfpro font-bold leading-[5vh] nm:leading-[70px] nm:w-[50vh]">
-            Tu espacio virtual diseñado por Rojkind.
-          </h1>
-          <p className="text-[1.5vh] underline cursor-pointer font-sfpro text-white">
-            Conocer más.
-          </p>
-        </div>
-      </div>
-*/ }
+export default (Main);
