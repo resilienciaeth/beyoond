@@ -53,7 +53,7 @@ function Home() {
     {/* navbar */}
     <nav className="flex font-sfpro justify-between items-center nm:h-24 h-14  px-4  text-black">
         <div className='max-w-[100px] nm:max-w-[205px]'>
-        <Image src='https://res.cloudinary.com/drxuutjwr/image/upload/v1667584770/logo_jfvsfc.png' width={205} height={95} />
+        <Image src={images.logo} width={205} height={95} />
         </div>
         <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
           <li onClick={() => window.open('/FAQ', '_self')} className="p-4 cursor-pointer">FAQ</li>
@@ -64,7 +64,7 @@ function Home() {
         </div>
         <div className={!nav ? 'fixed left-0 top-0 w-full border-r border-r-gray-700 z-10 h-full bg-beyond-1 ease-in-out duration-500' : 'fixed left-[-100%]' }>
           <div className='mt-10 px-6'>
-          <Image src='https://res.cloudinary.com/drxuutjwr/image/upload/v1667584770/logo_jfvsfc.png' width={200} height={100} />
+          <Image src={images.logo} width={200} height={100} />
           </div>
           <ul className="pt-24 px-10 uppercase font-bold">
             <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
