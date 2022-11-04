@@ -13,7 +13,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation, UseTranslation } from 'next-i18next';
 
 import images from '../public/assets';
-import Faq from '../components/Faq';
 import Main from '../components/Main';
 import Gallery from '../components/Gallery';
 import Card from '../components/Card';
@@ -57,7 +56,7 @@ function Home() {
         <Image src={images.logo} width={205} height={95} />
         </div>
         <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
-          <li onClick={() => window.open('/FAQ', '_self')} className="p-4">FAQ</li>
+          <li onClick={() => window.open('/FAQ', '_self')} className="p-4 cursor-pointer">FAQ</li>
           <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
         </ul>
         <div className='cursor-pointer z-20 block nm:hidden' onClick={handleNav}>
@@ -70,7 +69,7 @@ function Home() {
           <ul className="pt-24 px-10 uppercase font-bold">
             <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
             <li onClick={() => window.open('https://twitter.com/Beyoond_io')} className="p-4 text-[30px]">Twitter</li>
-            <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
+            <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[12px] nm:text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
           </ul>
         </div>
         </nav>
@@ -139,7 +138,7 @@ function Home() {
             </div>
             <div className="flex flex-row">
               <div>
-                <Image src={images.creator2} />
+                <Image src={images.rock} width={45} height={45} />
               </div>
               <div className="flex flex-col px-2">
                 <div className="text-[11px] nm:text-[12px] text-gray-600 ">{t('supply')}</div>
@@ -401,7 +400,8 @@ function Home() {
             <div>
               <Image src={images.kevin} />
               </div>
-              <div className='min-w-[160px]'>
+              <div>
+              <Image src={images.kevin1} />
               </div>
             </div>
           </div>

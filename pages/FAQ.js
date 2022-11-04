@@ -1,11 +1,25 @@
 import React from 'react'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation, UseTranslation } from 'next-i18next';
 import Image from 'next/image'
+
+
 import images from '../public/assets'
 import Faq1 from '../components/Faq1'
 
+export async function getStaticProps({locale}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['faq']))
+    }
+  }
+}
+
 const FAQ = () => {
+
+  const {t} = useTranslation();
   return (
-    <div className='text-black font-sfpro'>
+    <div className='text-black font-sfpro bg-beyond-1'>
         <div className=''>
             <Image src={images.faqbanner} objectFit='cover' />
         </div>

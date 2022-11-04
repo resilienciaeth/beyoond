@@ -1,4 +1,20 @@
 import React, { useState } from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation, UseTranslation } from 'next-i18next';
+import FAQP1 from './faqp1';
+import FAQP2 from './faqp2';
+import FAQP3 from './faqp3';
+import FAQP4 from './faqp4';
+import FAQP5 from './faqp5';
+import FAQP6 from './faqp6';
+
+export async function getStaticProps({locale}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['faq']))
+    }
+  }
+}
 
 function Faq1() {
   const [selected, setSelected] = useState(null);
@@ -10,21 +26,22 @@ function Faq1() {
     setSelected(i);
   };
 
+  const {t} = useTranslation();
+
   return (
     <div className="mt-5 nm:mt-[8rem] flex flex-col items-center justify-center sm:justify-start ">
       <div className="flex">
-        <h1 className="text-[25px] nm:text-[40px] font-bold">Frequently Asked Questions</h1>
+        <h1 className="text-[25px] nm:text-[40px] font-bold">{t('faq:title')}</h1>
       </div>
       <div className="nm:w-[70%] w-full mt-10 space-y-5  border-black ">
-        {data.map((item, i) => (
-          <div className="border-b-[1px] rounded-lg bg-white border-t-[1px] nm:border-[1px] w-full py-3 mt-2 space-x-4">
-            <div className="flex text-center justify-between ml-4 w-[85%]" onClick={() => toggle(i)}>
-              <h2>{item.question}</h2>
-              <span className="">{selected === i ? <img src="/assets/utilitymenu2.png" width={20} height={20} alt="arrow" /> : <img src="/assets/utilitymenu.png" width={20} height={20} />}</span>
-            </div>
-            <div className={selected === i ? 'content show' : 'content'}>{item.answer}</div>
-          </div>
-        )) }
+        
+          <FAQP1 />
+          <FAQP2 />
+          <FAQP3 />
+          <FAQP4 />
+          <FAQP5 />
+          <FAQP6 />
+      
       </div>
     </div>
   );
