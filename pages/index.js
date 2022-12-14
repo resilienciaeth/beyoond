@@ -48,6 +48,36 @@ function Home() {
 
   const {t} = useTranslation();
 
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const target = new Date('12/19/2022 11:00:00');
+
+    const interval = setInterval(() => {
+      const now = new Date();
+      const difference = target.getTime() - now.getTime();
+
+      const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+      setDays(d);
+
+      const h = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      setHours(h);
+
+      const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      setMinutes(m);
+
+      const s = Math.floor((difference % (1000 * 60)) / 1000);
+      setSeconds(s);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
      <Head>
@@ -155,11 +185,32 @@ function Home() {
             <p className="text-[10px] nm:text-[15px] mt-4 nm:mt-10">{t('price')}</p>
             <p className="text-[35px] nm:text-[50px] font-bold">$100 USD</p>
             <div className="flex flex-col mt-4 mb-6 nm:mb-10">
-              <p className="text-[8px] nm:text-[15px] text-center">{t('presale')}</p>
-              <div className="flex flex-row items-center justify-between space-x-16 mt-4 nm:mt-10">
+              <p className="text-[10px] nm:text-[15px] text-center">{t('presale')}</p>
+              <div className="flex flex-row items-center justify-between space-x-6 mt-4 nm:mt-10">
+              <div className='flex flex-col text-center'>
               <h1 className='text-[30px] font-bold'>
-                COMING SOON
+                {days}
               </h1>
+              <p className='text-[12px]'>Days</p>
+              </div>
+              <div className='flex flex-col text-center'>
+              <h1 className='text-[30px] font-bold'>
+                {hours}
+              </h1>
+              <p className='text-[12px]'>Hours</p>
+              </div>
+              <div className='flex flex-col text-center'>
+              <h1 className='text-[30px] font-bold'>
+                {minutes}
+              </h1>
+              <p className='text-[12px]'>Minutes</p>
+              </div>
+              <div className='flex flex-col text-center'>
+              <h1 className='text-[30px] font-bold'>
+                {seconds}
+              </h1>
+              <p className='text-[12px]'>Seconds</p>
+              </div>
               </div>
             </div>
           </div>
