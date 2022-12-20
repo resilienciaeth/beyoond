@@ -54,7 +54,7 @@ function Home() {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const target = new Date('12/19/2022 11:00:00');
+    const target = new Date('12/22/2022 11:00:00');
 
     const interval = setInterval(() => {
       const now = new Date();
