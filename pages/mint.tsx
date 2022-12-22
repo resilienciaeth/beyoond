@@ -236,7 +236,7 @@ function mint() {
             <div>
             <nav className="flex font-sfpro justify-between items-center nm:h-24 h-14  px-4  text-black">
             <div className='max-w-[100px] nm:max-w-[205px]'>
-            <Image src={images.logo} width={205} height={95} />
+            <Image alt='logo' src={images.logo} width={205} height={95} />
             </div>
             <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
               <li onClick={() => window.open('/FAQ', '_self')} className="p-4 cursor-pointer hover:text-gray-600">FAQ</li>
@@ -248,7 +248,7 @@ function mint() {
             </div>
             <div className={!nav ? 'fixed left-0 top-0 w-full border-r border-r-gray-700 z-10 h-full bg-beyond-1 ease-in-out duration-500' : 'fixed left-[-100%]' }>
               <div className='mt-10 px-6'>
-              <Image src={images.logo} width={200} height={100} />
+              <Image alt='logo' src={images.logo} width={200} height={100} />
               </div>
               <ul className="pt-24 px-10 uppercase font-bold">
                 <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
@@ -265,7 +265,7 @@ function mint() {
                   <div className="flex nm:ml-4 flex-row mt-4 space-x-4">
                     <div className="flex flex-row">
                       <div>
-                        <Image src={images.creator} />
+                        <Image alt='creator' src={images.creator} />
                       </div>
                       <div className="flex flex-col px-2">
                         <p className="text-[11px] text-gray-600 ">Creator</p>
@@ -274,7 +274,7 @@ function mint() {
                     </div>
                     <div className="flex flex-row">
                       <div>
-                        <Image src={images.rock} width={45} height={45} />
+                        <Image alt='rock' src={images.rock} width={45} height={45} />
                       </div>
                       <div className="flex flex-col px-2">
                         <div className="text-[11px] nm:text-[12px] text-gray-600 ">Supply</div>
@@ -301,7 +301,7 @@ function mint() {
                   </div>
                 </div>
                 <div className='hidden nm:flex w-[50%]'>
-                    <Image src={images.mint} />
+                    <Image alt='mint' src={images.mint} />
                 </div>
                 </div>
                 </div>
