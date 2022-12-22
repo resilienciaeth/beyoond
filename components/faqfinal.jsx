@@ -49,7 +49,7 @@ function Faqfinal() {
           <Q5 />
           <Q6 />
       </div>
-      <button onClick={() => window.open('/mint')} className="mt-10 mb-10 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black hover:bg-black hover:text-white hover:border-white py-2 px-10 text-[12px]">{t('button2')}</button>
+      <button onClick={() => window.open('/mint','_self')} className="mt-10 mb-10 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black hover:bg-black hover:text-white hover:border-white py-2 px-10 text-[12px]">{t('button2')}</button>
     </div>
   );
 }

@@ -92,7 +92,7 @@ function Home() {
         <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
           <li onClick={() => window.open('/FAQ', '_self')} className="p-4 cursor-pointer hover:text-gray-600">FAQ</li>
           <li onClick={() => window.open('/https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="p-4 cursor-pointer  hover:text-gray-600">{t('Explore_')}</li>
-          <button onClick={() => window.open('/mint')} className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
+          <button onClick={() => window.open('/mint','_self')} className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
         </ul>
         <div className='cursor-pointer z-20 block nm:hidden' onClick={handleNav}>
           {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
@@ -104,7 +104,7 @@ function Home() {
           <ul className="pt-24 px-10 uppercase font-bold">
             <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
             <li onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="p-4 text-[30px]">{t('Explore_')}</li>
-            <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[12px] nm:text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
+            <button onClick={() => window.open('/mint', '_self')} className="uppercase text-[12px] nm:text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">{t('navbar_button')}</button>
           </ul>
         </div>
         </nav>
@@ -146,7 +146,7 @@ function Home() {
             <p className="text-[15px] nm:text-[15px] text-black font-sfpro text-center nm:text-left nm:px-0 px-6 leading-[18px] mt-4">{t('section2_p3')}{' '}
               <span className="font-bold">{t('section2_p3bold')}</span>
               {' '}  {t('section2_p3cont')} </p>
-            <button onClick={() => window.open('/mint')} className="mt-6 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black hover:bg-black hover:text-white hover:border-white py-2 px-10 text-[12px]">{t('button2')}</button>
+            <button onClick={() => window.open('/mint','_self')} className="mt-6 border-[1px] rounded-[0.3rem] border-black font-bold bg-transparent text-black hover:bg-black hover:text-white hover:border-white py-2 px-10 text-[12px]">{t('button2')}</button>
           </div>
           <div className="flex nm:hidden flex-col items-center justify-center mt-[2rem] nm:w-[50%]">
             <Image src={images.section2mb} objectFit="contain" className='rounded-2xl' />
@@ -192,7 +192,7 @@ function Home() {
             </div>
           </div>
           <div className="mt-5 w-[80%] nm:w-[40%] nm:min-w-[300px] flex flex-col space-y-4">
-            <button onClick={() => window.open('/mint')} className="bg-[#2373EA] hover:bg-beyond-1 hover:border-2 hover:border-[#CBCBCB] hover:text-gray-600 text-white text-bold text-[12px] py-2 rounded-3xl">{t('button3')}</button>
+            <button onClick={() => window.open('/mint','_self')} className="bg-[#2373EA] hover:bg-beyond-1 hover:border-2 hover:border-[#CBCBCB] hover:text-gray-600 text-white text-bold text-[12px] py-2 rounded-3xl">{t('button3')}</button>
             <button onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="border-2 border-[#CBCBCB] text-gray-600 bg-beyond-1 hover:bg-[#2373EA] hover:text-white text-bold text-[12px] py-2 rounded-3xl">{t('button4')}</button>
           </div>
         </div>
@@ -514,7 +514,7 @@ function Home() {
               </div>
               <div className="space-y-2 mt-4">
                 <Link to='test-1' spy={true} smooth={true} offset={50} duration={500} className="text-white hover:text-gray-600 text-left text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('Learn')}</Link>
-                <p onClick={() => window.open('/mint')} className="text-white hover:text-gray-600 text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('navbar_button')}</p>
+                <p onClick={() => window.open('/mint','_self')} className="text-white hover:text-gray-600 text-[12px] nm:text-[20px] font-bold cursor-pointer">{t('navbar_button')}</p>
                 <p onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="text-white text-[12px] nm:text-[20px] font-bold hover:text-gray-600 cursor-pointer">{t('button4')}</p>
               </div>
             </div>

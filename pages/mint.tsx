@@ -253,7 +253,7 @@ function mint() {
               <ul className="pt-24 px-10 uppercase font-bold">
                 <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
                 <li onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="p-4 text-[30px]">Explore</li>
-                <button onClick={() => window.open('/mint')} className="uppercase text-[12px] nm:text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">Buy Space</button>
+                <button onClick={() => window.open('/mint','_self')} className="uppercase text-[12px] nm:text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">Buy Space</button>
               </ul>
             </div>
             </nav>
