@@ -45,6 +45,7 @@ import gallery3sm from './gallery3small.png';
 import faqbanner from './faqbanner.png';
 import rock from './ROCK.png';
 import kevin1 from './kevin1.png';
+import mint from './mint.png';
 
 export default {
   menu,
@@ -94,6 +95,7 @@ export default {
   faqbanner,
   rock,
   kevin1,
+  mint,
 
 
 };

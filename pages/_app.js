@@ -8,9 +8,14 @@ import Navbar from '../components/Navbar';
 import FAQ from './FAQ';  
 
 import '../styles/globals.css';
+import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
+
+// This is the chainId your dApp will work on.
+const activeChainId = ChainId.Goerli;
 
 function MyApp({ Component, pageProps, FAQ }) {
   return (
+    <ThirdwebProvider desiredChainId={activeChainId}>
     <ThemeProvider
       attribute="class"
     >
@@ -21,10 +26,12 @@ function MyApp({ Component, pageProps, FAQ }) {
         <meta name="author" content="Syamlal CM" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+        
         <Component {...pageProps} />
       </div>
       <Script src="https://kit.fontawesome.com/4e0b8e54bb.js" crossOrigin="anonymous" />
     </ThemeProvider>
+    </ThirdwebProvider>
   );
 }
 export default appWithTranslation(MyApp);
