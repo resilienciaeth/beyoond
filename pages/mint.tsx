@@ -278,7 +278,7 @@ function mint() {
                       </div>
                       <div className="flex flex-col px-2">
                         <div className="text-[11px] nm:text-[12px] text-gray-600 ">Supply</div>
-                        <p className="text-[12px] text-black">1000</p>
+                        <p className="text-[12px] text-black">1111</p>
                       </div>
                     </div>
                   </div>
@@ -287,7 +287,7 @@ function mint() {
                     <p className="text-[35px] nm:text-[50px] font-bold text-black">$100 USD</p>
                     <div className="flex flex-col mt-4 mb-6 nm:mb-10 text-black">
                       <p className="text-[10px] nm:text-[15px] text-center">Collectibles Sold</p>
-                        <h1 className='text-center text-[30px] font-bold'>{claimedNFTSupply?.toNumber()} / 1000</h1>
+                        <h1 className='text-center text-[30px] font-bold'>{claimedNFTSupply?.toNumber()} / 1111</h1>
                     </div>
                   </div>
                   <div className="mt-5 w-[60%] nm:w-[40%] nm:min-w-[300px] flex flex-col space-y-4">
