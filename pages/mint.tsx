@@ -19,10 +19,11 @@ import {
   import { useMemo, useState } from "react";
   import styles from "../styles/Theme.module.css";
   import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+  import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 
 import images from '../public/assets';
 
-const contractAddress = "0xe3F775BCBCA23dFeFECF461E8bD4E4956083121D"
+const contractAddress = "0x25B24a338c5021d6918317394fA00Cb984b5615b"
 
 function mint() {
     
@@ -43,7 +44,7 @@ function mint() {
         }
 
        if (isWrongNetwork) {
-        switchNetwork && switchNetwork(ChainId.Goerli);
+        switchNetwork && switchNetwork(ChainId.Mainnet);
         return;
        }
 
@@ -233,7 +234,7 @@ function mint() {
     }
     
     return (
-            <div>
+            <div className='bg-meta-gray'>
             <nav className="flex font-sfpro justify-between items-center nm:h-24 h-14  px-4  text-black">
             <div className='max-w-[100px] nm:max-w-[205px]'>
             <Image alt='logo' src={images.logo} width={205} height={95} />
@@ -241,7 +242,6 @@ function mint() {
             <ul className="hidden font-bold nm:flex nm:mr-10 space-x-[5rem] uppercase text-[15px]">
               <li onClick={() => window.open('/FAQ', '_self')} className="p-4 cursor-pointer hover:text-gray-600">FAQ</li>
               <li onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="p-4 cursor-pointer  hover:text-gray-600">Explore</li>
-              <button onClick={() => window.open('')} className="uppercase text-[15px] border-black border-2 rounded-[6px] px-4 py-1 hover:bg-black hover:text-white hover:border-white">Connect Your Wallet</button>
             </ul>
             <div className='cursor-pointer z-20 block nm:hidden' onClick={handleNav}>
               {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
@@ -253,7 +253,7 @@ function mint() {
               <ul className="pt-24 px-10 uppercase font-bold">
                 <li onClick={() => window.open('/FAQ', '_self')} className="p-4 text-[30px]">FAQ</li>
                 <li onClick={() => window.open('https://www.spatial.io/s/AXK4N-Morning-Naked-Meta-63626a426ce24900014b9c86?share=2965428990700775752')} className="p-4 text-[30px]">Explore</li>
-                <button onClick={() => window.open('https://forms.gle/GUQeAoUAQ7qA2ybQ7')} className="uppercase text-[12px] nm:text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">Connect your Wallet</button>
+                <button onClick={() => window.open('/mint')} className="uppercase text-[12px] nm:text-[30px] border-black border-2 rounded-[6px] ml-2 mt-4 px-4 py-1 hover:bg-black hover:text-white hover:border-white">Buy Space</button>
               </ul>
             </div>
             </nav>
@@ -291,11 +291,14 @@ function mint() {
                     </div>
                   </div>
                   <div className="mt-5 w-[60%] nm:w-[40%] nm:min-w-[300px] flex flex-col space-y-4">
-                    <button onClick={() => window.open('')} className="bg-[#212121] text-white text-bold text-[12px] py-3 font-bold rounded-lg" >BUY WITH CREDIT/DEBIT CARD</button>
+                  <CrossmintPayButton
+                clientId="ca1347b1-7ce2-49f7-8885-ad754ad8e9a5"
+                mintConfig={{"type":"thirdweb-drop","totalPrice":"0.085","quantity":"1"}}
+            />
                     {address && (<button className=" bg-[#212121] text-white text-bold text-[12px] py-3 font-bold rounded-lg"onClick={mint} disabled={claiming}>
                   {claiming ? "CLAIMING COLLECTIBLE" : "BUY COLLECTIBLE"}
                 </button>)}
-                {!address && (<button className=" bg-[#212121] text-white text-bold text-[12px] py-3 font-bold rounded-lg"  onClick={connectMetamask}>
+                {!address && (<button className=" bg-[#212121] text-white text-bold text-[14px] py-5 font-bold rounded-lg"  onClick={connectMetamask}>
                 BUY WITH CRYPTO
                 </button>)}
                   </div>
