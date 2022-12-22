@@ -18,7 +18,6 @@ import {
   import type { NextPage } from "next";
   import { useMemo, useState } from "react";
   import styles from "../styles/Theme.module.css";
-  import { parseIneligibility } from "../utils/parseIneligibility";
   import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 import images from '../public/assets';
@@ -218,24 +217,6 @@ function mint() {
     if (isSoldOut) {
       return "Sold Out";
     }
-
-    if (canClaim) {
-      const pricePerToken = BigNumber.from(
-        activeClaimCondition.data?.currencyMetadata.value || 0
-      );
-      if (pricePerToken.eq(0)) {
-        return "Mint (Free)";
-      }
-      return `Mint (${priceToMint})`;
-    }
-    if (claimIneligibilityReasons.data?.length) {
-      return parseIneligibility(claimIneligibilityReasons.data, quantity);
-    }
-    if (buttonLoading) {
-      return "Checking eligibility...";
-    }
-
-    return "Claiming not available";
   }, [
     isSoldOut,
     canClaim,

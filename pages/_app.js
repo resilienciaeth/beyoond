@@ -6,6 +6,7 @@ import Home from '.';
 import Main from '../components/Main';
 import Navbar from '../components/Navbar';
 import FAQ from './FAQ';  
+import { useSyncExternalStore } from 'react';
 
 import '../styles/globals.css';
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
